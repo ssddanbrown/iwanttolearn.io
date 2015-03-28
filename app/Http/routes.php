@@ -15,6 +15,15 @@ Route::group(['prefix' => 'admin'], function() {
 
     Route::get('/', 'AdminController@index');
 
+    Route::group(['prefix' => 'tags'], function() {
+        Route::get('/', 'TagController@adminIndex');
+        Route::get('create', 'TagController@adminCreate');
+        Route::post('store', 'TagController@adminStore');
+        Route::get('/{id}', 'TagController@adminEdit');
+        Route::put('update/{id}', 'TagController@adminUpdate');
+        Route::delete('destroy/{id}', 'TagController@adminDestroy');
+    });
+
 });
 
 Route::get('/', 'WelcomeController@index');

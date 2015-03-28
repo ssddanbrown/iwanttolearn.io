@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/tags"><i class="fa fa-tags"></i> Tags</a></li>
+                <li><a href="/admin/tags"><i class="fa fa-tags"></i> Tags</a></li>
                 <li><a href="/test">Register</a></li>
             </ul>
 
@@ -31,7 +31,19 @@
     </div>
 </nav>
 
-@yield('content')
+<div class="container">
+    <div class="col-md-12">
+        @if(Session::has('success'))
+            <div class="alert alert-success">
+                <p><strong>{{ Session::get('success') }}</strong></p>
+            </div>
+        @endif
+    </div>
+</div>
+
+<div class="container">
+    @yield('content')
+</div>
 
 <!-- Scripts -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
