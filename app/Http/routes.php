@@ -24,6 +24,15 @@ Route::group(['prefix' => 'admin'], function() {
         Route::delete('destroy/{id}', 'TagController@adminDestroy');
     });
 
+    Route::group(['prefix' => 'resources'], function() {
+        Route::get('/', 'ResourceController@adminIndex');
+        Route::get('create', 'ResourceController@adminCreate');
+        Route::post('store', 'ResourceController@adminStore');
+        Route::get('/{id}', 'ResourceController@adminEdit');
+        Route::put('update/{id}', 'ResourceController@adminUpdate');
+        Route::delete('destroy/{id}', 'ResourceController@adminDestroy');
+    });
+
 });
 
 Route::get('/', 'WelcomeController@index');

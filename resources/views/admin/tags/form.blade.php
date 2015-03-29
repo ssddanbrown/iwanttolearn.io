@@ -17,4 +17,16 @@
     <button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Save</button>
 </div>
 
+<script>
+    $(document).ready(function() {
+        var slug = $('input[name="slug"]').first();
+        $('input[name="name"]').change(function() {
+            if(slug.val() === '') {
+                var name = $(this).val();
+                slug.val(name.replace(' ', '-').toLowerCase())
+            }
+        });
+    });
+</script>
+
 @include('admin/parts/errors')
