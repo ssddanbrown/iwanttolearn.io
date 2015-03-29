@@ -12,5 +12,8 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('admin.scss');
+    mix.sass([
+        'admin/admin.scss',
+        'front/front.scss'
+    ]);
 });

@@ -19,7 +19,6 @@ class ArticleController extends Controller {
         $this->message = $message;
     }
 
-
     /**
      * Display a listing of the article in the admin area.
      *
@@ -54,6 +53,9 @@ class ArticleController extends Controller {
 
         if ($request->has('tags')) {
             $this->article->syncTagArray($request->get('tags'));
+        }
+        if ($request->has('formats')) {
+            $this->article->syncFormatArray($request->get('formats'));
         }
         return redirect('admin/articles');
     }
@@ -95,9 +97,8 @@ class ArticleController extends Controller {
         $this->article->save();
         $this->message->success('Article "' . $this->article->title . '" has been updated.');
 
-        if ($request->has('tags')) {
-            $this->article->syncTagArray($request->get('tags'));
-        }
+        $this->article->syncTagArray($request->get('tags'));
+        $this->article->syncFormatArray($request->get('formats'));
         return redirect('/admin/articles/' . $id);
     }
 
@@ -111,6 +112,7 @@ class ArticleController extends Controller {
     {
         $this->article = $this->article->find($id);
         $this->article->tags()->detach();
+        $this->article->formats()->detach();
         $this->article->delete();
         $this->message->success('Article "' . $this->article->title . '" has been deleted.');
         return redirect('/admin/articles');

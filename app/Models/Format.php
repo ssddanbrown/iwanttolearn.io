@@ -12,4 +12,15 @@ class Format extends Model {
         return '<i class="fa fa-' . $this->icon . '"></i>';
     }
 
+    // Relations
+    public function resources()
+    {
+        return $this->morphedByMany('Learn\Models\Resource', 'formattable');
+    }
+
+    public function articles()
+    {
+        return $this->morphedByMany('Learn\Models\Article', 'formattable');
+    }
+
 }

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Resource extends Taggable {
+class Resource extends Sourceable {
 
 	protected $table = 'resources';
 

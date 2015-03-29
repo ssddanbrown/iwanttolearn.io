@@ -14,7 +14,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Article Details</div>
                 <div class="panel-body">
-                    @include('admin/articles/form', ['currentTags' => $article->tags])
+                    @include('admin/articles/form', ['currentTags' => $article->tags, 'currentFormats' => $article->formats])
                 </div>
             </div>
 

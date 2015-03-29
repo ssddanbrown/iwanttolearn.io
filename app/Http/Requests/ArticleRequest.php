@@ -24,6 +24,7 @@ class ArticleRequest extends Request {
 		return [
 			'title' => 'string|required|max:250',
             'description' => 'string',
+            'tags' => 'array',
             'link' => 'string|required|url|max:250'
 		];
 	}

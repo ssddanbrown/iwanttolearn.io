@@ -23,14 +23,18 @@
     </div>
 </div>
 
-@include('admin/parts/tag-selection')
-
-<div class="clearfix"></div>
-
 <div class="form-group">
     {!! Form::label('description', 'Description', ['class'=>'control-label']) !!}
     {!! Form::textarea('description', null, ['class'=>'form-control']) !!}
 </div>
+
+@include('admin/parts/tag-selection')
+
+<div class="clearfix"></div>
+
+@include('admin/parts/format-selection')
+
+<div class="clearfix"></div>
 
 <div class="form-group">
     <button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Save</button>

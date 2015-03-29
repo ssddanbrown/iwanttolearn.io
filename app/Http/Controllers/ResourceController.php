@@ -19,7 +19,6 @@ class ResourceController extends Controller {
         $this->message = $message;
     }
 
-
     /**
      * Display a listing of the resource in the admin area.
      *
@@ -55,6 +54,9 @@ class ResourceController extends Controller {
 
         if ($request->has('tags')) {
             $this->resource->syncTagArray($request->get('tags'));
+        }
+        if ($request->has('formats')) {
+            $this->resource->syncFormatArray($request->get('formats'));
         }
         return redirect('admin/resources');
     }
@@ -95,9 +97,8 @@ class ResourceController extends Controller {
         $this->resource->save();
         $this->message->success('Resource "' . $this->resource->name . '" has been updated.');
 
-        if ($request->has('tags')) {
-            $this->resource->syncTagArray($request->get('tags'));
-        }
+        $this->resource->syncTagArray($request->get('tags'));
+        $this->resource->syncFormatArray($request->get('formats'));
         return redirect('/admin/resources/' . $id);
     }
 
@@ -111,6 +112,7 @@ class ResourceController extends Controller {
     {
         $this->resource = $this->resource->find($id);
         $this->resource->tags()->detach();
+        $this->resource->formats()->detach();
         $this->resource->delete();
         $this->message->success('Resource "' . $this->resource->name . '" has been deleted.');
         return redirect('/admin/resources');
