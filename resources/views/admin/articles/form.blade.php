@@ -8,6 +8,8 @@
     {!! Form::text('link', null, ['class'=>'form-control']) !!}
 </div>
 
+@include('admin/parts/tag-selection')
+
 <div class="form-group">
     {!! Form::label('description', 'Description', ['class'=>'control-label']) !!}
     {!! Form::textarea('description', null, ['class'=>'form-control']) !!}

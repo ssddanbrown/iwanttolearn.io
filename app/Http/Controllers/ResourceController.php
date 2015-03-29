@@ -44,6 +44,7 @@ class ResourceController extends Controller {
     /**
      * Store a newly created resource in storage.
      *
+     * @param ResourceRequest $request
      * @return Response
      */
     public function adminStore(ResourceRequest $request)
@@ -51,6 +52,10 @@ class ResourceController extends Controller {
         $this->resource = $this->resource->fill($request->all());
         $this->resource->save();
         $this->message->success('New resource "' . $this->resource->name . '" has been saved.');
+
+        if ($request->has('tags')) {
+            $this->resource->syncTagArray($request->get('tags'));
+        }
         return redirect('admin/resources');
     }
 
@@ -89,6 +94,10 @@ class ResourceController extends Controller {
         $this->resource->fill($request->all());
         $this->resource->save();
         $this->message->success('Resource "' . $this->resource->name . '" has been updated.');
+
+        if ($request->has('tags')) {
+            $this->resource->syncTagArray($request->get('tags'));
+        }
         return redirect('/admin/resources/' . $id);
     }
 
@@ -101,6 +110,7 @@ class ResourceController extends Controller {
     public function adminDestroy($id)
     {
         $this->resource = $this->resource->find($id);
+        $this->resource->tags()->detach();
         $this->resource->delete();
         $this->message->success('Resource "' . $this->resource->name . '" has been deleted.');
         return redirect('/admin/resources');

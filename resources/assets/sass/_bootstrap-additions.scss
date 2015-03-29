@@ -1,0 +1,33 @@
+
+.list-group-scrollable {
+  max-height: 160px;
+  overflow-y: scroll;
+  border: 1px solid $gray-lighter;
+  a.list-group-item {
+    cursor: pointer;
+  }
+}
+
+.list-group-item-thin {
+  padding: 5px 15px;
+}
+
+.list-group-scrollable .list-group-item:first-child, .list-group-scrollable .list-group-item:last-child {
+  border-radius: 0;
+}
+
+.list-group-search {
+  border: 1px solid $gray-lighter;
+  width: 100%;
+}
+
+.list-group-search-input {
+  border: 1px solid $gray-lighter;
+  margin-bottom: -1px;
+  width: 100%;
+  padding: 5px 15px;
+}
+
+.select-lists-results .list-group-item i {
+  cursor: pointer;
+}

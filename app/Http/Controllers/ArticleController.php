@@ -51,6 +51,10 @@ class ArticleController extends Controller {
         $this->article = $this->article->fill($request->all());
         $this->article->save();
         $this->message->success('New article "' . $this->article->title . '" has been saved.');
+
+        if ($request->has('tags')) {
+            $this->article->syncTagArray($request->get('tags'));
+        }
         return redirect('admin/articles');
     }
 
@@ -90,6 +94,10 @@ class ArticleController extends Controller {
         $this->article->fill($request->all());
         $this->article->save();
         $this->message->success('Article "' . $this->article->title . '" has been updated.');
+
+        if ($request->has('tags')) {
+            $this->article->syncTagArray($request->get('tags'));
+        }
         return redirect('/admin/articles/' . $id);
     }
 
@@ -102,6 +110,7 @@ class ArticleController extends Controller {
     public function adminDestroy($id)
     {
         $this->article = $this->article->find($id);
+        $this->article->tags()->detach();
         $this->article->delete();
         $this->message->success('Article "' . $this->article->title . '" has been deleted.');
         return redirect('/admin/articles');

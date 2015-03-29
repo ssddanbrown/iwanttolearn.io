@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model {
+class Article extends Taggable {
 
 	protected $table = 'articles';
     protected $fillable = ['title', 'description', 'link'];

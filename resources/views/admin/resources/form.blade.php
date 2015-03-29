@@ -23,6 +23,9 @@
     </div>
 </div>
 
+@include('admin/parts/tag-selection')
+
+<div class="clearfix"></div>
 
 <div class="form-group">
     {!! Form::label('description', 'Description', ['class'=>'control-label']) !!}

@@ -150,6 +150,7 @@ return [
 		'Learn\Providers\ConfigServiceProvider',
 		'Learn\Providers\EventServiceProvider',
 		'Learn\Providers\RouteServiceProvider',
+        'Learn\Providers\ViewComposerServiceProvider',
 
 	],
 

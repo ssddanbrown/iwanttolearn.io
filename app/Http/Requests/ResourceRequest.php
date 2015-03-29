@@ -25,6 +25,7 @@ class ResourceRequest extends Request {
             'name' => 'required|string|max:100',
             'link' => 'required|string|url|max:250',
             'cost' => 'required|in:free,paid,both',
+            'tags' => 'array',
             'description' => 'string'
 		];
 	}

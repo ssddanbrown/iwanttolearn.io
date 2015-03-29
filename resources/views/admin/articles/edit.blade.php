@@ -4,7 +4,7 @@
 
     <div class="col-md-12">
         <div class="page-header clearfix">
-            <h1 class="pull-left">Edit article</h1>
+            <h1 class="pull-left">Edit Article</h1>
         </div>
     </div>
 
@@ -14,7 +14,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Article Details</div>
                 <div class="panel-body">
-                    @include('admin/articles/form')
+                    @include('admin/articles/form', ['currentTags' => $article->tags])
                 </div>
             </div>
 
