@@ -33,6 +33,15 @@ Route::group(['prefix' => 'admin'], function() {
         Route::delete('destroy/{id}', 'ResourceController@adminDestroy');
     });
 
+    Route::group(['prefix' => 'formats'], function() {
+        Route::get('/', 'FormatController@adminIndex');
+        Route::get('create', 'FormatController@adminCreate');
+        Route::post('store', 'FormatController@adminStore');
+        Route::get('/{id}', 'FormatController@adminEdit');
+        Route::put('update/{id}', 'FormatController@adminUpdate');
+        Route::delete('destroy/{id}', 'FormatController@adminDestroy');
+    });
+
 });
 
 Route::get('/', 'WelcomeController@index');
