@@ -102,6 +102,8 @@ class TagController extends Controller {
 	public function adminDestroy($id)
 	{
 		$this->tag = $this->tag->find($id);
+        $this->tag->resources()->detach();
+        $this->tag->articles()->detach();
         $this->tag->delete();
         $this->message->success('Tag "' . $this->tag->name . '" has been deleted.');
         return redirect('/admin/tags');

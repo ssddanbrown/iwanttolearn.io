@@ -101,6 +101,8 @@ class FormatController extends Controller {
     public function adminDestroy($id)
     {
         $this->format = $this->format->find($id);
+        $this->format->articles()->detach();
+        $this->format->resources()->detach();
         $this->format->delete();
         $this->message->success('Format "' . $this->format->name . '" has been deleted.');
         return redirect('/admin/formats');
