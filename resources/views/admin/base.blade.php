@@ -27,6 +27,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/admin/resources"><i class="fa fa-book"></i> Resources</a></li>
+                <li><a href="/admin/articles"><i class="fa fa-newspaper-o"></i> Articles</a></li>
                 <li><a href="/admin/tags"><i class="fa fa-tags"></i> Tags</a></li>
                 <li><a href="/admin/formats"><i class="fa fa-file-text"></i> Formats</a></li>
             </ul>

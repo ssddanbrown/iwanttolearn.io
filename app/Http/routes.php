@@ -42,6 +42,15 @@ Route::group(['prefix' => 'admin'], function() {
         Route::delete('destroy/{id}', 'FormatController@adminDestroy');
     });
 
+    Route::group(['prefix' => 'articles'], function() {
+        Route::get('/', 'ArticleController@adminIndex');
+        Route::get('create', 'ArticleController@adminCreate');
+        Route::post('store', 'ArticleController@adminStore');
+        Route::get('/{id}', 'ArticleController@adminEdit');
+        Route::put('update/{id}', 'ArticleController@adminUpdate');
+        Route::delete('destroy/{id}', 'ArticleController@adminDestroy');
+    });
+
 });
 
 Route::get('/', 'WelcomeController@index');
