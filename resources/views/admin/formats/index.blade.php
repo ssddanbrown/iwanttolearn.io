@@ -22,6 +22,7 @@
                     <th>Name</th>
                     <th>Plural Name</th>
                     <th>Icon</th>
+                    <th>Order</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -30,6 +31,7 @@
                         <td><a href="/admin/formats/{{ $format->id }}">{{ $format->name }}</a></td>
                         <td>{{ $format->plural }}</td>
                         <td>{!! $format->getIconCode() !!}</td>
+                        <td>{{ $format->order }}</td>
                     </tr>
                 @endforeach
                 </tbody>

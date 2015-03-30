@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Format extends Model {
 
 	protected $table = 'formats';
-    protected $fillable = ['name', 'icon'];
+    protected $fillable = ['name', 'icon', 'plural', 'order'];
 
     public function getIconCode()
     {

@@ -9,6 +9,11 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('order', 'Order Priority', ['class'=>'control-label']) !!}
+    {!! Form::number('order', null, ['class'=>'form-control']) !!}
+</div>
+
+<div class="form-group">
     {!! Form::label('icon', 'Icon', ['class'=>'control-label']) !!}
     <div class="input-group">
         <div class="input-group-addon"><i id="icon"></i></div>

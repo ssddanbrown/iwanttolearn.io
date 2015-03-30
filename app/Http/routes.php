@@ -53,9 +53,9 @@ Route::group(['prefix' => 'admin'], function() {
 
 });
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'PageController@homepage');
+Route::get('/t/{tagSlug}', 'PageController@tag');
 
-Route::get('home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

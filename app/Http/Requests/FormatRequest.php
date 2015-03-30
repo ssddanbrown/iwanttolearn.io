@@ -23,7 +23,9 @@ class FormatRequest extends Request {
 	{
 		return [
 			'name' => 'string|required|max:100',
-            'icon' => 'string|required|max:100'
+            'icon' => 'string|required|max:100',
+            'plural' => 'string|required|max:100',
+            'order' => 'required|integer'
 		];
 	}
 
