@@ -82,7 +82,7 @@ class UserController extends Controller {
     {
         $this->user = $this->user->find($id);
         $this->user->fill($request->all());
-        if($request->has('password')) {
+        if($request->has('password') && strlen($request->get('password')) > 4) {
             $this->user->password = Hash::make($request->get('password'));
         }
         $this->user->save();
