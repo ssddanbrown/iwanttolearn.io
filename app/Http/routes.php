@@ -58,6 +58,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::delete('destroy/{id}', 'ArticleController@adminDestroy');
     });
 
+    Route::group(['prefix' => 'users'], function() {
+        Route::get('/', 'UserController@adminIndex');
+        Route::get('create', 'UserController@adminCreate');
+        Route::post('store', 'UserController@adminStore');
+        Route::get('/{id}', 'UserController@adminEdit');
+        Route::put('update/{id}', 'UserController@adminUpdate');
+        Route::delete('destroy/{id}', 'UserController@adminDestroy');
+    });
+
 });
 
 
