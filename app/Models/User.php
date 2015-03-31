@@ -1,4 +1,4 @@
-<?php namespace Learn;
+<?php namespace Learn\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

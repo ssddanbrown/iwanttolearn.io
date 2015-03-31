@@ -11,7 +11,14 @@
 |
 */
 
-Route::group(['prefix' => 'admin'], function() {
+Route::get('/', 'PageController@homepage');
+Route::get('/t/{tagSlug}', 'PageController@tag');
+
+Route::get('/admin/login', 'AdminController@showLogin');
+Route::post('/admin/login', 'AdminController@login');
+Route::get('/admin/logout', 'AdminController@logout');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     Route::get('/', 'AdminController@index');
 
@@ -52,9 +59,6 @@ Route::group(['prefix' => 'admin'], function() {
     });
 
 });
-
-Route::get('/', 'PageController@homepage');
-Route::get('/t/{tagSlug}', 'PageController@tag');
 
 
 Route::controllers([

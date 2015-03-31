@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Learn\Models\Format;
+use Learn\Models\User;
 
 class DatabaseSeeder extends Seeder {
 
@@ -17,6 +18,9 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('FormatTableSeeder');
         $this->command->info('Format Table Seeded!');
+
+        $this->call('InitialUserSeeder');
+        $this->command->info('Intitial user added!');
 	}
 
 }
@@ -31,6 +35,15 @@ class FormatTableSeeder extends Seeder {
         Format::create(['name' => 'Blog', 'plural' => 'Blogs', 'icon' => 'th-list']);
         Format::create(['name' => 'Interactive', 'plural' => 'Interactive Sites', 'icon' => 'keyboard-o']);
         Format::create(['name' => 'Community', 'plural' => 'Community Hubs', 'icon' => 'group']);
+    }
+
+}
+
+class InitialUserSeeder extends Seeder {
+
+    public function run()
+    {
+        User::create(['name' => 'admin', 'email' => 'admin@admin.com', 'password' => Hash::make('password')]);
     }
 
 }

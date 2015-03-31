@@ -33,6 +33,7 @@
                 <li><a href="/admin/articles"><i class="fa fa-newspaper-o"></i> Articles</a></li>
                 <li><a href="/admin/tags"><i class="fa fa-tags"></i> Tags</a></li>
                 <li><a href="/admin/formats"><i class="fa fa-file-text"></i> Formats</a></li>
+                <li><a href="/admin/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
 
         </div>
