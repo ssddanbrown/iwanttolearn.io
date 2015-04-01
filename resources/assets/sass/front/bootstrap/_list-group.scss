@@ -50,9 +50,12 @@ a.list-group-item {
     color: $list-group-link-heading-color;
   }
 
+  .small {
+    color: #888;
+  }
+
   // Hover state
-  &:hover,
-  &:focus {
+  &:hover {
     text-decoration: none;
     color: $list-group-link-hover-color;
     background-color: $list-group-hover-bg;
@@ -79,8 +82,7 @@ a.list-group-item {
 
   // Active class on item itself, not parent
   &.active,
-  &.active:hover,
-  &.active:focus {
+  &.active:hover{
     z-index: 2; // Place active items above their siblings for proper border styling
     color: $list-group-active-color;
     background-color: $list-group-active-bg;

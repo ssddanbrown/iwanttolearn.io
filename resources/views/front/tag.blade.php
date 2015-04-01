@@ -3,11 +3,14 @@
 
 @section('content')
 
-    <div class="container">
-        <h1>Tag: {{ $tag->name }}</h1>
+    <div class="page-header">
+        <div class="container">
+            <h1>{{ $tag->name }}</h1>
+        </div>
     </div>
 
-    <div class="container row">
+    <div class="container">
+        <div class="row">
         @foreach($resourceGroups as $resourceGroup)
             <div class="col-md-3">
                 <div class="panel panel-primary">
@@ -18,13 +21,15 @@
                     <div class="list-group">
                         @foreach($resourceGroup['resources'] as $resource)
                             <a class="list-group-item" target="_blank" href="{{ $resource->link }}">
-                                {{ $resource->name }}
+                                {{ $resource->name }} <br/>
+                                <span class="small">{{ $resource->getShortLink(30) }}</span>
                             </a>
                         @endforeach
                     </div>
                 </div>
             </div>
         @endforeach
+        </div>
     </div>
 
 @stop

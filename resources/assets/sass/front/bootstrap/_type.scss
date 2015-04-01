@@ -24,8 +24,8 @@ h1, h2, h3, h4, h5, h6,
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-  margin-top: $line-height-computed;
-  margin-bottom: ($line-height-computed / 2);
+  margin-top: $line-height-computed * 2;
+  margin-bottom: ($line-height-computed / 1.5);
 
   small,
   .small {
@@ -136,9 +136,15 @@ mark,
 // -------------------------
 
 .page-header {
-  padding-bottom: (($line-height-computed / 2) - 1);
-  margin: ($line-height-computed * 2) 0 $line-height-computed;
-  border-bottom: 1px solid $page-header-border-color;
+  padding: $-l 0;
+  margin: 0 0 $-xl 0;
+  border-bottom: 1px solid #DDD;
+  background-color: $brand-primary;
+  h1, h2, h3 {
+    margin: 0;
+    color: #FFF;
+    font-weight: 300;
+  }
 }
 
 

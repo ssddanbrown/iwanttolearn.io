@@ -3,15 +3,17 @@
 
 @section('content')
 
-    <div class="container">
-        <h1>Welcome ...</h1>
+    <div class="hero-home">
+        <div class="container">
+            <h1>Find new places to learn</h1>
+        </div>
     </div>
 
     <div class="container">
-        <h2>Tags:</h2>
+        <h2>Available Topics</h2>
         <div>
             @foreach($tags as $tag)
-                <a href="/t/{{ $tag->slug }}">{{ $tag->name }}</a>
+                <a class="tag-link" href="/t/{{ $tag->slug }}">{{ $tag->name }}</a>
             @endforeach
         </div>
     </div>

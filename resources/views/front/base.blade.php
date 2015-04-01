@@ -9,7 +9,7 @@
     <link href="{{ asset('/css/front.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -18,7 +18,7 @@
 </head>
 <body ng-app="learn">
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="/">iwanttolearn.io</a>
         </div>
@@ -32,10 +32,7 @@
     </div>
 </nav>
 
-
-<div class="container">
-    @yield('content')
-</div>
+@yield('content')
 
 </body>
 </html>
