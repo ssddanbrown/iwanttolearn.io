@@ -6,7 +6,7 @@
         <div class="page-header clearfix">
             <h1 class="pull-left">Resources</h1>
             <div class="pull-right link-group">
-                <a href="resources/create"><i class="fa fa-plus"></i> New</a>
+                <a href="/resources/create"><i class="fa fa-plus"></i> New</a>
             </div>
         </div>
     </div>
