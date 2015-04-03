@@ -1,6 +1,9 @@
 
 @extends('front/base')
 
+@section('title', 'Find New Places To Learn')
+@section('description', 'Find places to learn and grow your knowledge on a variety of subjects such as HTML, PHP, CSS and more. Learning resources are listed by media type so you can find a style of learning that suits you')
+
 @section('content')
 
     <div class="hero-home hero-section blue">

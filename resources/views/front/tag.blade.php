@@ -1,6 +1,14 @@
 
 @extends('front/base')
 
+@section('title')
+    Resources for {{ $tag->name }}
+@stop
+
+@section('description')
+    Find places to learn for {{ $tag->name }}
+@stop
+
 @section('content')
 
     <div class="page-header">
