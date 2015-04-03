@@ -26,7 +26,7 @@ class ResourceController extends Controller {
      */
     public function adminIndex()
     {
-        $resources = $this->resource->paginate(50);
+        $resources = $this->resource->orderBy('created_at', 'desc')->paginate(25);
         return view('admin/resources/index')->with('resources', $resources);
     }
 
