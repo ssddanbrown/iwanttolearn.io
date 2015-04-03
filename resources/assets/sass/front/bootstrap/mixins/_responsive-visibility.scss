@@ -19,3 +19,18 @@
     display: none !important;
   }
 }
+@mixin smaller-than($width) {
+  @media screen and (max-width: $width) { @content; }
+}
+
+@mixin larger-than($width) {
+  @media screen and (min-width: $width) { @content; }
+}
+
+@mixin between($min-width, $max-width) {
+  @media screen and (min-width: $min-width) and (max-width: $max-width)  { @content; }
+}
+
+@mixin respond-at($width) {
+  @media screen and (max-width: $width) { @content; }
+}

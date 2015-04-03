@@ -54,5 +54,10 @@ class ItemRepo {
         return $formatResourceArray;
     }
 
+    public function getRecentResources($count = 10)
+    {
+        return $this->resource->orderBy('created_at', 'desc')->take($count)->get();
+    }
+
 
 }

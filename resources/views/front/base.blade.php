@@ -47,5 +47,11 @@
 
 @yield('content')
 
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">iwanttolearn.io</p>
+    </div>
+</footer>
+
 </body>
 </html>

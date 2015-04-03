@@ -13,6 +13,13 @@ $-s: 12px;
 $-xs: 6px;
 $-xxs: 3px;
 
+// Custom boxshadows
+$bs-card: 0 0 1px 1px rgba(0,0,0,.05);
+$bs-card-hover: 0 1px 2px 2px rgba(0,0,0,.05);
+$bs-tag-hover: 0 1px 2px 2px rgba(0,0,0,.08);
+
+$anim-time: cubic-bezier(.62,.28,.23,.99);
+
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
@@ -368,13 +375,13 @@ $container-lg:                 $container-large-desktop !default;
 // Basics of a navbar
 $navbar-height:                    50px !default;
 $navbar-margin-bottom:             0;
-$navbar-border-radius:             $border-radius-base !default;
+$navbar-border-radius:             0 !default;
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
 $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
 $navbar-collapse-max-height:       340px !default;
 
-$navbar-default-color:             #777 !default;
-$navbar-default-bg:                #f8f8f8 !default;
+$navbar-default-color:             #FFF !default;
+$navbar-default-bg:                $brand-primary !default;
 $navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 
 // Navbar links
@@ -387,7 +394,7 @@ $navbar-default-link-disabled-color:       #ccc !default;
 $navbar-default-link-disabled-bg:          transparent !default;
 
 // Navbar brand label
-$navbar-default-brand-color:               $navbar-default-link-color !default;
+$navbar-default-brand-color:               #FFF !default;
 $navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%) !default;
 $navbar-default-brand-hover-bg:            transparent !default;
 

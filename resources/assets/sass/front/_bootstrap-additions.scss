@@ -1,14 +1,28 @@
 
-.hero-home {
-  background-color: $brand-primary;
-  padding: 80px 0 100px 0;
-  color: #EEE;
-  h1 {
+.hero-home h1 {
     font-size: 6em;
     font-weight: 300;
+  @include smaller-than(600px) {
+    font-size: 3em;
   }
 }
 
+.hero-section {
+  padding: 100px 0 100px 0;
+  h1, h2 {
+    margin-top: 0;
+  }
+  &.blue {
+    background-color: $brand-primary;
+    color: #EEE;
+  }
+  &.white {
+    background-color: #FFF;
+  }
+  @include smaller-than(600px) {
+    padding: 50px 0 50px 0;
+  }
+}
 .tag-link {
   background-color: $brand-primary;
   padding: 5px 14px;
@@ -16,8 +30,61 @@
   text-decoration: none;
   border-radius: 24px;
   margin: 0 4px 4px 0;
+  display: inline-block;
+  transition: all $anim-time 120ms;
   &:hover {
     color: #FFF;
     text-decoration: none;
+    box-shadow: $bs-tag-hover;
+    transform: translate3d(0, -2px, 0);
   }
+  &.small {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+  i {
+    padding-right: $-xs;
+  }
+}
+
+.resource-item {
+  display: block;
+  margin-bottom: $-l;
+  overflow: hidden;
+  color: #888;
+  transition: all $anim-time 80ms;
+  &:hover {
+    text-decoration: none;
+    color: $brand-primary;
+  }
+  &:hover h4 {
+    color: $brand-primary;
+  }
+  h4 {
+    color: #444;
+    transition: all $anim-time 80ms;
+  }
+  .tags span {
+    margin: 0 $-xxs;
+  }
+}
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 40px;
+}
+.footer {
+  position: absolute;
+  background-color: #FFF;
+  border-top: 1px solid #DDD;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  padding: $-s 0;
 }
