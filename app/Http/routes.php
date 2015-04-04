@@ -11,9 +11,12 @@
 |
 */
 
+// Front-end routes
 Route::get('/', 'PageController@homepage');
+Route::get('/about', 'PageController@about');
 Route::get('/t/{tagSlug}', 'PageController@tag');
 
+// Admin routes
 Route::get('/admin/login', 'AdminController@showLogin');
 Route::post('/admin/login', 'AdminController@login');
 Route::get('/admin/logout', 'AdminController@logout');

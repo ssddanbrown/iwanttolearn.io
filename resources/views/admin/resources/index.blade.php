@@ -13,8 +13,20 @@
 
     <div class="col-md-12">
 
+        <form class="form-inline" action="/admin/resources" method="GET">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                    <input type="text" name="search" placeholder="search" class="form-control"/>
+                </div>
+            </div>
+            @if(Request::has('search'))
+                <a href="/admin/resources">Clear Search</a>
+            @endif
+        </form>
+
         @if(count($resources) > 0)
-            {!! $resources->render() !!}
+            {!! $resources->appends(Request::except('page'))->render() !!}
 
             <table class="table table-striped">
                 <thead>
@@ -35,7 +47,7 @@
                 </tbody>
             </table>
 
-            {!! $resources->render() !!}
+            {!! $resources->appends(Request::except('page'))->render() !!}
         @else
             <p>No resources have been added...</p>
         @endif

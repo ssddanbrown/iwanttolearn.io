@@ -23,7 +23,7 @@
         $('input[name="name"]').change(function() {
             if(slug.val() === '') {
                 var name = $(this).val();
-                slug.val(name.replace(' ', '-').toLowerCase())
+                slug.val(name.replace(/ /g, '-').toLowerCase())
             }
         });
     });

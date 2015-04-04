@@ -29,8 +29,14 @@
                     <div class="list-group">
                         @foreach($resourceGroup['resources'] as $resource)
                             <a class="list-group-item" target="_blank" href="{{ $resource->link }}">
-                                {{ $resource->name }} <br/>
-                                <span class="small">{{ $resource->getShortLink(30) }}</span>
+                                {{ $resource->name }}
+                                @if(!$resource->isFree())
+                                    <i class="fa fa-money pull-right" data-toggle="tooltip" title="{{ $resource->getCostMessage() }}"></i>
+                                @endif
+                                <br/>
+                                <span class="small">
+                                    {{ $resource->getShortLink(30) }}
+                                </span>
                             </a>
                         @endforeach
                     </div>
@@ -39,5 +45,11 @@
         @endforeach
         </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 
 @stop

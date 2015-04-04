@@ -22,12 +22,18 @@ class ResourceController extends Controller {
     /**
      * Display a listing of the resource in the admin area.
      *
+     * @param Request $request
      * @return Response
      */
-    public function adminIndex()
+    public function adminIndex(Request $request)
     {
-        $resources = $this->resource->orderBy('created_at', 'desc')->paginate(25);
-        return view('admin/resources/index')->with('resources', $resources);
+        $resources =  $this->resource->orderBy('created_at', 'desc');
+        if ($request->has('search')) {
+            $resources = $resources->where('name', 'LIKE', '%'.$request->get('search').'%');
+        }
+        return view('admin/resources/index', [
+            'resources' => $resources->paginate(25)
+        ]);
     }
 
     /**

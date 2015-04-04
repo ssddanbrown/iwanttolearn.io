@@ -20,9 +20,17 @@ class PageController extends Controller {
 	public function homepage()
 	{
         $tags = $this->itemRepo->getAllTags();
-        $recentResources = $this->itemRepo->getRecentResources(6);
+        $recentResources = $this->itemRepo->getRecentResources(9);
 		return view('front/homepage', ['tags' => $tags, 'recentResources' => $recentResources]);
 	}
+
+    /**
+     * Shows the about page.
+     */
+    public function about()
+    {
+        return view('front/about');
+    }
 
     /**
      * Show the page for a specific tag.

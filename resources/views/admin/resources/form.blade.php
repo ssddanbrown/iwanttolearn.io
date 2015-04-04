@@ -12,7 +12,7 @@
     <label>Cost</label><br/>
     <div class="btn-group" data-toggle="buttons">
         <label class="btn btn-primary">
-            {!! Form::radio('cost', 'free') !!} Free
+            {!! Form::radio('cost', 'free', isset($resource) ? null : true) !!} Free
         </label>
         <label class="btn btn-primary">
             {!! Form::radio('cost', 'paid') !!} Paid

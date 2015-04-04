@@ -44,7 +44,7 @@
     @endif
 
 </head>
-<body ng-app="learn">
+<body>
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
@@ -54,6 +54,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">home</a></li>
+                <li><a href="/about">about</a></li>
             </ul>
 
         </div>
@@ -64,7 +66,8 @@
 
 <footer class="footer">
     <div class="container">
-        <p class="text-muted">iwanttolearn.io</p>
+        <p class="text-muted pull-left">iwanttolearn.io - hosted on <a href="https://www.digitalocean.com/?refcode=3e6ce576b856" target="_blank">DigitalOcean</a></p>
+        <p class="pull-right text-muted">This site uses cookies to improve the experience</p>
     </div>
 </footer>
 
