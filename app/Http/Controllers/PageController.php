@@ -1,16 +1,18 @@
 <?php namespace Learn\Http\Controllers;
 
-use Learn\Repos\ItemRepo;
+use Learn\Repos\ResourceRepo;
+use Learn\Repos\TagRepo;
 
 class PageController extends Controller {
 
-    protected $itemRepo;
+    protected $tagRepo;
+    protected $resourceRepo;
 
-    function __construct(ItemRepo $itemRepo)
+    function __construct(TagRepo $tagRepo, ResourceRepo $resourceRepo)
     {
-        $this->itemRepo = $itemRepo;
+        $this->tagRepo = $tagRepo;
+        $this->resourceRepo = $resourceRepo;
     }
-
 
     /**
      * Shows the initial homepage.
@@ -19,9 +21,7 @@ class PageController extends Controller {
      */
 	public function homepage()
 	{
-        $tags = $this->itemRepo->getAllTags();
-        $recentResources = $this->itemRepo->getRecentResources(9);
-		return view('front/homepage', ['tags' => $tags, 'recentResources' => $recentResources]);
+		return view('front/homepage');
 	}
 
     /**
@@ -40,8 +40,8 @@ class PageController extends Controller {
      */
     public function tag($tagSlug)
     {
-        $tag = $this->itemRepo->getTagBySlug($tagSlug);
-        $resourceGroups = $this->itemRepo->getResourcesByTagGroupedByFormat($tag);
+        $tag = $this->tagRepo->getBySlug($tagSlug);
+        $resourceGroups = $this->resourceRepo->getByTagGroupedByFormat($tag);
         return view('front/tag', ['tag' => $tag, 'resourceGroups' => $resourceGroups]);
     }
 

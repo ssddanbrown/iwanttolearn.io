@@ -7,19 +7,21 @@ use Illuminate\Http\Request;
 use Learn\Http\Requests\TagCreateRequest;
 use Learn\Http\Requests\TagUpdateRequest;
 use Learn\Models\Tag;
+use Learn\Repos\TagRepo;
 use Learn\Services\MessageService;
 
 class TagController extends Controller {
 
     protected $tag;
+    protected $repo;
     protected $message;
 
-    function __construct(Tag $tag, MessageService $message)
+    function __construct(Tag $tag, TagRepo $repo, MessageService $message)
     {
         $this->tag = $tag;
+        $this->repo = $repo;
         $this->message = $message;
     }
-
 
     /**
 	 * Display a listing of the resource in the admin area.
@@ -42,16 +44,18 @@ class TagController extends Controller {
 		return view('admin/tags/create');
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param TagCreateRequest $request
+     * @return Response
+     */
 	public function adminStore(TagCreateRequest $request)
 	{
 		$this->tag = $this->tag->fill($request->all());
         $this->tag->save();
         $this->message->success('New tag "' . $this->tag->name . '" has been saved.');
+        $this->repo->cleanCache($this->tag);
         return redirect('admin/tags');
 	}
 
@@ -90,6 +94,7 @@ class TagController extends Controller {
         $this->tag->fill($request->all());
         $this->tag->save();
         $this->message->success('Tag "' . $this->tag->name . '" has been updated.');
+        $this->repo->cleanCache($this->tag);
         return redirect('/admin/tags/' . $id);
 	}
 
@@ -101,11 +106,8 @@ class TagController extends Controller {
 	 */
 	public function adminDestroy($id)
 	{
-		$this->tag = $this->tag->find($id);
-        $this->tag->resources()->detach();
-        $this->tag->articles()->detach();
-        $this->tag->delete();
-        $this->message->success('Tag "' . $this->tag->name . '" has been deleted.');
+        $name = $this->repo->destroy($id);
+        $this->message->success('Tag "' . $name . '" has been deleted.');
         return redirect('/admin/tags');
 	}
 

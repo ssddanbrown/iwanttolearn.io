@@ -1,24 +1,23 @@
 <?php namespace Learn\Http\Composers;
 
-
 use Illuminate\Contracts\View\View;
 use Learn\Models\Format;
-use Learn\Models\Tag;
+use Learn\Repos\TagRepo;
 
 class AdminPartsComposer extends NamedComposer {
 
-    protected $tag;
+    protected $tagRepo;
     protected $format;
 
-    function __construct(Tag $tag, Format $format)
+    function __construct(TagRepo $tagRepo, Format $format)
     {
-        $this->tag = $tag;
+        $this->tagRepo = $tagRepo;
         $this->format = $format;
     }
 
     public function tagSelection(View $view)
     {
-        $tags = $this->tag->all();
+        $tags = $this->tagRepo->getAll();
         $view->with('tags', $tags);
     }
 

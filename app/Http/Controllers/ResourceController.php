@@ -6,16 +6,19 @@ use Learn\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Learn\Http\Requests\ResourceRequest;
 use Learn\Models\Resource;
+use Learn\Repos\ResourceRepo;
 use Learn\Services\MessageService;
 
 class ResourceController extends Controller {
 
     protected $resource;
+    protected $repo;
     protected $message;
 
-    function __construct(Resource $resource, MessageService $message)
+    function __construct(Resource $resource, ResourceRepo $repo , MessageService $message)
     {
         $this->resource = $resource;
+        $this->repo = $repo;
         $this->message = $message;
     }
 
@@ -64,6 +67,7 @@ class ResourceController extends Controller {
         if ($request->has('formats')) {
             $this->resource->syncFormatArray($request->get('formats'));
         }
+        $this->repo->cleanCache($this->resource);
         return redirect('admin/resources');
     }
 
@@ -93,18 +97,22 @@ class ResourceController extends Controller {
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param ResourceRequest $request
+     * @param  int $id
      * @return Response
      */
     public function adminUpdate(ResourceRequest $request, $id)
     {
         $this->resource = $this->resource->find($id);
+        $this->repo->cleanCache($this->resource);
+
         $this->resource->fill($request->all());
         $this->resource->save();
         $this->message->success('Resource "' . $this->resource->name . '" has been updated.');
 
         $this->resource->syncTagArray($request->get('tags'));
         $this->resource->syncFormatArray($request->get('formats'));
+        $this->repo->cleanCache($this->resource);
         return redirect('/admin/resources/' . $id);
     }
 
@@ -116,11 +124,8 @@ class ResourceController extends Controller {
      */
     public function adminDestroy($id)
     {
-        $this->resource = $this->resource->find($id);
-        $this->resource->tags()->detach();
-        $this->resource->formats()->detach();
-        $this->resource->delete();
-        $this->message->success('Resource "' . $this->resource->name . '" has been deleted.');
+        $name = $this->repo->destroy($id);
+        $this->message->success('Resource "' . $name . '" has been deleted.');
         return redirect('/admin/resources');
     }
 
