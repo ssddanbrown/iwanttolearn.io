@@ -8,7 +8,7 @@
 
     <div class="hero-home hero-section blue">
         <div class="container">
-            <h1>Find new places to learn</h1>
+            <h1>Find new places to learn <br/><span class="typedjs">&nbsp;</span></h1>
         </div>
     </div>
 
@@ -30,5 +30,23 @@
         </div>
     </div>
 
-
+    <script src="/js/typed.min.js"></script>
+    <script>
+        var tags = [
+                @foreach($tags as $tag)
+                    '{{ $tag->name }}',
+                @endforeach
+        ];
+        $(document).ready(function() {
+            $('.hero-home').css({
+                maxHeight: $('.hero-home').outerHeight(),
+                minHeight: $('.hero-home').outerHeight()
+            });
+            $('.typedjs').typed({
+                strings: tags,
+                contentType: 'html',
+                typeSpeed: 100
+            });
+        });
+    </script>
 @stop

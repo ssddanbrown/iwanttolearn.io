@@ -31,6 +31,10 @@
                 <li>Framework: <a href="http://laravel.com/" target="_blank">Laravel</a></li>
                 <li>Styling: <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> & <a href="http://sass-lang.com/" target="_blank">Sass</a></li>
                 <li>Icons: <a href="http://fontawesome.io/" target="_blank">Font-awesome icon font</a></li>
+                <li>
+                    JS Libraries:
+                    <a href="https://jquery.com/">Jquery</a> & <a href="http://www.mattboldt.com/demos/typed-js/">Typed.js</a>
+                </li>
             </ul>
         </div>
 

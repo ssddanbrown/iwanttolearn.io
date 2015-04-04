@@ -21,7 +21,9 @@ class PageController extends Controller {
      */
 	public function homepage()
 	{
-		return view('front/homepage');
+		return view('front/homepage', [
+            'tags' => $this->tagRepo->getAll()
+        ]);
 	}
 
     /**

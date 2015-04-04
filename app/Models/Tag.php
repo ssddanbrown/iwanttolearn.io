@@ -17,4 +17,9 @@ class Tag extends Model {
     {
         return $this->morphedByMany('Learn\Models\Article', 'taggable');
     }
+
+    public function link()
+    {
+        return '/t/' . $this->slug;
+    }
 }
