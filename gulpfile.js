@@ -1,6 +1,4 @@
 var elixir = require('laravel-elixir');
-var gulp = require('gulp');
-var phpunit = require('gulp-phpunit');
 
 /*
  |--------------------------------------------------------------------------
@@ -18,8 +16,4 @@ elixir(function(mix) {
         'admin/admin.scss',
         'front/front.scss'
     ]);
-});
-
-gulp.task('test', function() {
-    gulp.src('phpunit.xml').pipe(phpunit());
 });
