@@ -4,3 +4,4 @@
 *.map
 *.css
 /.idea
+/tests/logs
