@@ -34,6 +34,7 @@
                     <th>Name</th>
                     <th>link</th>
                     <th>Cost</th>
+                    <th>Tags</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -42,6 +43,11 @@
                         <td><a href="/admin/resources/{{ $resource->id }}">{{ $resource->name }}</a></td>
                         <td><a href="{{ $resource->link }}" target="_blank">{{ $resource->getShortLink()  }}</a></td>
                         <td>{{ $resource->cost }}</td>
+                        <td>
+                            @foreach($resource->tags as $tag)
+                                <a href="/admin/tags/{{ $tag->id }}">{{ $tag->name }}</a>
+                            @endforeach
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
