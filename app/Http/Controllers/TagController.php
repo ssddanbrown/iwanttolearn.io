@@ -55,6 +55,10 @@ class TagController extends Controller {
 		$this->tag = $this->tag->fill($request->all());
         $this->tag->save();
         $this->message->success('New tag "' . $this->tag->name . '" has been saved.');
+
+        if ($request->has('tags')) {
+            $this->tag->syncTagArray($request->get('tags'));
+        }
         $this->repo->cleanCache($this->tag);
         return redirect('admin/tags');
 	}
@@ -94,6 +98,8 @@ class TagController extends Controller {
         $this->tag->fill($request->all());
         $this->tag->save();
         $this->message->success('Tag "' . $this->tag->name . '" has been updated.');
+
+        $this->tag->syncTagArray($request->get('tags'));
         $this->repo->cleanCache($this->tag);
         return redirect('/admin/tags/' . $id);
 	}

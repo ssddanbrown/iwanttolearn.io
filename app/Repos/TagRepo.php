@@ -70,6 +70,7 @@ class TagRepo {
         $name = $this->tag->name;
 
         $this->cleanCache($this->tag);
+        $this->tag->tags()->detach();
         $this->tag->resources()->detach();
         $this->tag->articles()->detach();
         $this->tag->delete();

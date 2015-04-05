@@ -13,6 +13,10 @@
     {!! Form::textarea('description', null, ['class'=>'form-control']) !!}
 </div>
 
+@include('admin/parts/tag-selection', ['label' => 'Related Tags'])
+
+<div class="clearfix"></div>
+
 <div class="form-group">
     <button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Save</button>
 </div>

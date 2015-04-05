@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label>Tags</label><br/>
+    <label>{{ isset($label) ? $label : 'Tags' }}</label><br/>
     <div class="row select-lists" data-input="tags">
         <div class="col-md-6 list-group-searchable">
             <div class="list-group-search">

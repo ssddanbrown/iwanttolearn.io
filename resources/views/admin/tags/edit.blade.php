@@ -14,7 +14,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Tag Details</div>
                 <div class="panel-body">
-                    @include('admin/tags/form')
+                    @include('admin/tags/form', ['currentTags' => $tag->tags])
                 </div>
             </div>
 

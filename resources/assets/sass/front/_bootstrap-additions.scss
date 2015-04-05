@@ -22,6 +22,12 @@
   &.white {
     background-color: #FFF;
   }
+  &.border-top {
+    border-top: 1px solid #DDD;
+  }
+  &.tight {
+    padding: 60px 0 60px 0;
+  }
   @include smaller-than(600px) {
     padding: 50px 0 50px 0;
   }
@@ -40,6 +46,13 @@
     text-decoration: none;
     box-shadow: $bs-tag-hover;
     transform: translate3d(0, -2px, 0);
+    i {
+      transform: rotate(-20deg);
+    }
+  }
+  &:active i {
+    transition: all $anim-time 3s;
+    transform: rotate(360deg);
   }
   &.small {
     padding: 4px 10px;
@@ -47,6 +60,8 @@
   }
   i {
     padding-right: $-xs;
+    transform-origin: top left;
+    transition: all $anim-time 120ms;
   }
 }
 
@@ -72,7 +87,7 @@
   }
 }
 
-
+// Sticky footer stuff
 html {
   position: relative;
   min-height: 100%;
@@ -88,7 +103,7 @@ body {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 40px;
+  height: 42px;
   padding: $-s 0;
 }
 
