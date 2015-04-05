@@ -26,6 +26,10 @@
             <a class="navbar-brand" href="/admin">iwanttolearn.io - Admin</a>
         </div>
 
+        <ul class="nav navbar-nav navbar-left">
+            <li><a href="/" target="_blank">View live site</a></li>
+        </ul>
+
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">

@@ -40,7 +40,7 @@ class TagRepo {
             return $this->cache->get($cacheTag);
         }
 
-        $tags = $this->tag->all();
+        $tags = $this->tag->orderBy('created_at', 'desc')->get();
         $this->cache->forever($cacheTag, $tags);
         return $tags;
     }
