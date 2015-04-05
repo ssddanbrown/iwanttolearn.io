@@ -51,7 +51,7 @@
 
 
     @if(count($tag->tags) > 0)
-        <div class="hero-section border-top tight">
+        <div class="hero-section border-top">
             <div class="container">
                 <h2>Related Topics</h2>
                 <div>
