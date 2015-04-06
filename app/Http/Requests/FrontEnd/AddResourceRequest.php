@@ -1,4 +1,4 @@
-<?php namespace Learn\Http\Requests;
+<?php namespace Learn\Http\FrontEnd\Requests;
 
 use Learn\Http\Requests\Request;
 

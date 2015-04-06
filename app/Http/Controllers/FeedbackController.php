@@ -1,7 +1,7 @@
 <?php namespace Learn\Http\Controllers;
 
+use Learn\Http\FrontEnd\Requests\AddResourceRequest;
 use Learn\Http\Requests;
-use Learn\Http\Requests\AddResourceRequest;
 use Learn\Models\Feedback;
 use Learn\Services\EmailService;
 use Learn\Services\MessageService;
