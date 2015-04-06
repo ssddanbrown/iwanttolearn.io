@@ -38,6 +38,7 @@
                 <li><a href="/admin/tags"><i class="fa fa-tags"></i> Tags</a></li>
                 <li><a href="/admin/formats"><i class="fa fa-file-text"></i> Formats</a></li>
                 <li><a href="/admin/users"><i class="fa fa-users"></i> Users</a></li>
+                <li><a href="/admin/feedback"><i class="fa fa-retweet"></i> Feedback</a></li>
                 <li><a href="/admin/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
 

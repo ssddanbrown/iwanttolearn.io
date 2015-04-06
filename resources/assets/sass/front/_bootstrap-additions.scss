@@ -35,6 +35,7 @@
     padding: 50px 0 50px 0;
   }
 }
+
 .tag-link {
   background-color: $brand-primary;
   padding: 5px 14px;
@@ -131,4 +132,15 @@ body {
   0% { opacity:1; }
   50% { opacity:0; }
   100% { opacity:1; }
+}
+
+// Form page stuff
+label.required:after, span.required:after {
+  content: "\f069";
+  color: red;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 8px;
+  vertical-align: top;
+  padding-left: 3px;
+  padding-top: 3px;
 }

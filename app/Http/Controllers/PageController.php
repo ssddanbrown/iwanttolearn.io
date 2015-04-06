@@ -35,6 +35,14 @@ class PageController extends Controller {
     }
 
     /**
+     * Shows the resource/topic suggestion page.
+     */
+    public function submit()
+    {
+        return view('front/submit');
+    }
+
+    /**
      * Show the page for a specific tag.
      *
      * @param $tagSlug

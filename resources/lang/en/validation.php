@@ -73,6 +73,7 @@ return [
 	"unique"               => "The :attribute has already been taken.",
 	"url"                  => "The :attribute format is invalid.",
 	"timezone"             => "The :attribute must be a valid zone.",
+    "captcha"              => "The :attribute must pass",
 
 	/*
 	|--------------------------------------------------------------------------
@@ -102,6 +103,10 @@ return [
 	|
 	*/
 
-	'attributes' => [],
+	'attributes' => [
+        'g-recaptcha-response'  => 'Captcha',
+        'extra-link'            => 'Resource Link',
+        'email'                 => 'Email'
+    ],
 
 ];

@@ -14,6 +14,8 @@
 // Front-end routes
 Route::get('/', 'PageController@homepage');
 Route::get('/about', 'PageController@about');
+Route::get('/submit', 'PageController@submit');
+Route::post('/submit/resource', 'FeedbackController@submitResource');
 Route::get('/t/{tagSlug}', 'PageController@tag');
 
 // Admin routes
@@ -21,10 +23,13 @@ Route::get('/admin/login', 'AdminController@showLogin');
 Route::post('/admin/login', 'AdminController@login');
 Route::get('/admin/logout', 'AdminController@logout');
 
+// Admin routes that require authentications
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
+    // Admin pages
     Route::get('/', 'AdminController@index');
 
+    // Admin Tag routes
     Route::group(['prefix' => 'tags'], function() {
         Route::get('/', 'TagController@adminIndex');
         Route::get('create', 'TagController@adminCreate');
@@ -34,6 +39,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::delete('destroy/{id}', 'TagController@adminDestroy');
     });
 
+    // Admin Resources routes
     Route::group(['prefix' => 'resources'], function() {
         Route::get('/', 'ResourceController@adminIndex');
         Route::get('create', 'ResourceController@adminCreate');
@@ -43,6 +49,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::delete('destroy/{id}', 'ResourceController@adminDestroy');
     });
 
+    // Admin Formats routes
     Route::group(['prefix' => 'formats'], function() {
         Route::get('/', 'FormatController@adminIndex');
         Route::get('create', 'FormatController@adminCreate');
@@ -52,6 +59,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::delete('destroy/{id}', 'FormatController@adminDestroy');
     });
 
+    // Admin Article routes
     Route::group(['prefix' => 'articles'], function() {
         Route::get('/', 'ArticleController@adminIndex');
         Route::get('create', 'ArticleController@adminCreate');
@@ -61,6 +69,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::delete('destroy/{id}', 'ArticleController@adminDestroy');
     });
 
+    // Admin User routes
     Route::group(['prefix' => 'users'], function() {
         Route::get('/', 'UserController@adminIndex');
         Route::get('create', 'UserController@adminCreate');
@@ -68,6 +77,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::get('/{id}', 'UserController@adminEdit');
         Route::put('update/{id}', 'UserController@adminUpdate');
         Route::delete('destroy/{id}', 'UserController@adminDestroy');
+    });
+
+    // Admin feedback routes
+    Route::group(['prefix' => 'feedback'], function() {
+        Route::get('/', 'FeedbackController@adminIndex');
+        Route::get('/{id}', 'FeedbackController@adminShow');
+        Route::delete('destroy/{id}', 'FeedbackController@adminDestroy');
     });
 
 });

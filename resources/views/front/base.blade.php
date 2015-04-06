@@ -36,10 +36,8 @@
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
             ga('create', '{{ env('GA_TRACKING_ID') }}', 'auto');
             ga('send', 'pageview');
-
         </script>
     @endif
 
@@ -54,8 +52,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/">home</a></li>
-                <li><a href="/about">about</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/submit">Submit a Resource</a></li>
             </ul>
 
         </div>

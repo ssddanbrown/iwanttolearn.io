@@ -1,6 +1,7 @@
 <?php namespace Learn\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Learn\Services\Validation;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -11,7 +12,10 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+        $this->app->validator->resolver(function($translator, $data, $rules, $messages)
+        {
+            return new Validation($translator, $data, $rules, $messages);
+        });
 	}
 
 	/**
