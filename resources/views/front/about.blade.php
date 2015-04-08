@@ -25,7 +25,7 @@
                 <p>My name is Dan Brown. I am a full-stack developer at <a href="http://clever-touch.com/">CleverTouch</a>. I love new technology, Especially web technology since you can build experiences and programmes using almost no resources. I get a real kick out of the creation side of development, whether that's in function or design, particularly when it has a use to others.
                     <br/>You can contact me on using links below:</p>
                 <ul>
-                    <li><a  target="_blank" href="danb.me"><i class="fa fa-home"></i> &nbsp;&nbsp;danb.me</a></li>
+                    <li><a  target="_blank" href="http://danb.me"><i class="fa fa-home"></i> &nbsp;&nbsp;danb.me</a></li>
                     <li><a target="_blank" href="mailto:ssd.dan.brown@googlemail.com"><i class="fa fa-envelope"></i> &nbsp;&nbsp;ssddanbrown@googlemail.com</a></li>
                     <li><a href="https://github.com/ssddanbrown" target="_blank"><i class="fa fa-github"></i> &nbsp;&nbsp;Github</a></li>
                     <li><a href="http://uk.linkedin.com/in/sandcat" target="_blank"><i class="fa fa-linkedin"></i>  &nbsp;&nbsp;LinkedIn</a></li>

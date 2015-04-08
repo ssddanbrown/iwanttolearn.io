@@ -144,3 +144,31 @@ label.required:after, span.required:after {
   padding-left: 3px;
   padding-top: 3px;
 }
+
+// Tag page stuff
+.social-icons {
+  i {
+    padding-right: $-s;
+    position: relative;
+    left: 0%;
+    transition: all $anim-time 160ms;
+    font-size: 20px;
+  }
+  .text {
+    opacity: 1;
+    transition: all $anim-time 160ms;
+  }
+  .list-group-item {transition: all $anim-time 160ms;}
+  .fa-facebook-square {color: #4e69a2;}
+  .fa-twitter-square {color: #319de1;}
+  .fa-google-plus-square {color: #df513f;}
+  .fa-reddit-square {color: #3BA7DF;}
+  .list-group-item:hover {
+    .text {
+      opacity: 0;
+    }
+    i.fa {
+      left: 46%;
+    }
+  }
+}
