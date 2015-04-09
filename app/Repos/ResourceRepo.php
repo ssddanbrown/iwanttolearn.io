@@ -10,7 +10,8 @@ class ResourceRepo {
 
     // The tags used for caching.
     protected $cacheTags = [
-        'byTagGrouped' => 'resources-by-tag-grouped-', // Append tagID
+        'all'             => 'resources-all',
+        'byTagGrouped'    => 'resources-by-tag-grouped-', // Append tagID
         'recentFrontPage' => 'resources-recent-front-page'
     ];
 
@@ -26,9 +27,37 @@ class ResourceRepo {
      */
     public function cleanCache($resource) {
         $this->cache->forget($this->cacheTags['recentFrontPage']);
+        $this->cache->forget($this->cacheTags['all']);
         foreach ($resource->tags as $tag) {
             $this->cache->forget($this->cacheTags['byTagGrouped'] . $tag->id);
         }
+    }
+
+    /**
+     * Gets the total number of resources on the system.
+     */
+    public function getTotalCount()
+    {
+        return count($this->getAll());
+    }
+
+    /**
+     * Gets all the resources available.
+     *
+     * This method is cached for speed.
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getAll()
+    {
+        $cacheTag = $this->cacheTags['all'];
+
+        if ($this->cache->has($cacheTag)) {
+            return $this->cache->get($cacheTag);
+        }
+
+        $tags = $this->resource->orderBy('created_at', 'desc')->get();
+        $this->cache->forever($cacheTag, $tags);
+        return $tags;
     }
 
     /**

@@ -21,7 +21,7 @@
             <div class="row" id="resource-form">
 
                 <div class="col-md-8">
-                    <div class="panel panel-default">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">Submission Form</div>
                         <div class="panel-body">
                             {!! Form::open(['url' => '/submit/resource', 'method' => 'POST', 'class' => 'form']) !!}
@@ -51,7 +51,7 @@
 
                             @include('front/parts/errors')
 
-                            <button class="btn btn-primary btn-block">Submit</button>
+                            <button class="btn btn-success btn-block">Submit</button>
 
                             {!! Form::close() !!}
 
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="panel panel-default">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">Resource Guidelines</div>
                         <div class="list-group">
                             <div class="list-group-item">

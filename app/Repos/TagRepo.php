@@ -9,7 +9,7 @@ class TagRepo {
     protected $cache;
 
     protected $cacheTags = [
-        'all' => 'tag-all',
+        'all' => 'tag-all'
     ];
 
     function __construct(Tag $tag, Cache $cache)
@@ -22,8 +22,17 @@ class TagRepo {
      * Cleans all relevant cache entries for a tag.
      * @param $resource
      */
-    public function cleanCache($tag) {
+    public function cleanCache($tag)
+    {
         $this->cache->forget($this->cacheTags['all']);
+    }
+
+    /**
+     * Gets the number of tags on the system.
+     */
+    public function getTotalCount()
+    {
+        return count($this->getAll());
     }
 
     /**

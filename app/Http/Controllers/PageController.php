@@ -31,7 +31,11 @@ class PageController extends Controller {
      */
     public function about()
     {
-        return view('front/about');
+        $totals = [
+            'tags' => $this->tagRepo->getTotalCount(),
+            'resources' => $this->resourceRepo->getTotalCount()
+        ];
+        return view('front/about', ['totals' => $totals]);
     }
 
     /**
