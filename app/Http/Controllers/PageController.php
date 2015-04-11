@@ -64,6 +64,9 @@ class PageController extends Controller {
     public function tag($tagSlug)
     {
         $tag = $this->tagRepo->getBySlug($tagSlug);
+        if ($tag === null) {
+            abort(404);
+        }
         $resourceGroups = $this->resourceRepo->getByTagGroupedByFormat($tag);
         return view('front/tag', ['tag' => $tag, 'resourceGroups' => $resourceGroups]);
     }
