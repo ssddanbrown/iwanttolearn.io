@@ -53,7 +53,8 @@
                         <ul>
                             <li>Host: <a href="https://www.digitalocean.com/?refcode=3e6ce576b856" target="_blank">Digital Ocean</a></li>
                             <li>OS: <a href="http://www.ubuntu.com/" target="_blank">Ubuntu 14.04</a></li>
-                            <li>Server Stack: <a target="_blank" href="http://nginx.org/">NGINX</a> + <a target="_blank" href="https://github.com/facebook/hhvm">HHVM</a></li>
+                            <li>Server Stack: <a target="_blank" href="http://nginx.org/">NGINX</a> + <a target="_blank" href="https://github.com/facebook/hhvm">HHVM</a> +
+                                <a target="_blank" href="http://redis.io/">Redis</a></li>
                             <li>Framework: <a href="http://laravel.com/" target="_blank">Laravel</a></li>
                             <li>Styling: <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> & <a href="http://sass-lang.com/" target="_blank">Sass</a></li>
                             <li>Icons: <a href="http://fontawesome.io/" target="_blank">Font-awesome icon font</a></li>
