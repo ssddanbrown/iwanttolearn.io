@@ -51,6 +51,10 @@
     @include opacity(.65);
     @include box-shadow(none);
   }
+
+  > i {
+    margin-right: $-xs;
+  }
 }
 
 

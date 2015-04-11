@@ -39,6 +39,11 @@ class Tag extends Model {
         $this->tags()->sync($arrayWithPivotData);
     }
 
+    /**
+     * Creates a relative link for this tag.
+     *
+     * @return string
+     */
     public function link()
     {
         return '/t/' . $this->slug;

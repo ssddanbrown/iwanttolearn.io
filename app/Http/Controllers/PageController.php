@@ -2,11 +2,20 @@
 
 use Learn\Repos\ResourceRepo;
 use Learn\Repos\TagRepo;
+use Learn\Services\SitemapService;
 
 class PageController extends Controller {
 
     protected $tagRepo;
     protected $resourceRepo;
+
+    // A list of urls to static pages
+    // Used for sitemap generation.
+    protected $staticUrls = [
+        '/',
+        '/about',
+        '/submit'
+    ];
 
     function __construct(TagRepo $tagRepo, ResourceRepo $resourceRepo)
     {
@@ -57,6 +66,20 @@ class PageController extends Controller {
         $tag = $this->tagRepo->getBySlug($tagSlug);
         $resourceGroups = $this->resourceRepo->getByTagGroupedByFormat($tag);
         return view('front/tag', ['tag' => $tag, 'resourceGroups' => $resourceGroups]);
+    }
+
+    /**
+     * Dynamically Creates a sitemap for crawlers such as Google.
+     * @param SitemapService $sitemapService
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function sitemap(SitemapService $sitemapService)
+    {
+        $tags = $this->tagRepo->getAll();
+        $sitemapService->addUrls($this->staticUrls);
+        $sitemapService->addTags($tags);
+        $sitemap = $sitemapService->generate();
+        return response($sitemap, 200, ['Content-Type' => 'text/xml']);
     }
 
 }

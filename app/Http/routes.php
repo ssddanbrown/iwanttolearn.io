@@ -17,6 +17,7 @@ Route::get('/about', 'PageController@about');
 Route::get('/submit', 'PageController@submit');
 Route::post('/submit/resource', 'FeedbackController@submitResource');
 Route::get('/t/{tagSlug}', 'PageController@tag');
+Route::get('/sitemap.xml', 'PageController@sitemap');
 
 // Admin routes
 Route::get('/admin/login', 'AdminController@showLogin');

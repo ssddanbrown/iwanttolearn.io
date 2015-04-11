@@ -48,8 +48,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading"><i class="fa fa-wrench"></i> How The Site Is Built</div>
                     <div class="panel-body">
-                        <p>This site is built upon many brilliant open source projects. <br/>
-                            I am currently in rapid development with the site but once development levels off i will open up the source for this site on github.</p>
+                        <p>This site is built upon many brilliant open source projects. Here is an overview of what this site runs on:</p>
                         <ul>
                             <li>Host: <a href="https://www.digitalocean.com/?refcode=3e6ce576b856" target="_blank">Digital Ocean</a></li>
                             <li>OS: <a href="http://www.ubuntu.com/" target="_blank">Ubuntu 14.04</a></li>
@@ -65,6 +64,10 @@
                                 <a target="_blank" href="http://masonry.desandro.com/">masonry.js</a>
                             </li>
                         </ul>
+                        <br/>
+                        <p>The source to this site is also open under the MIT licence, the source can be found here: </p>
+                        <a class="btn btn-default" target="_blank" href="https://github.com/ssddanbrown/iwanttolearn.io"><i class="fa fa-github"></i> View On Github</a>
+                        <br/>
                     </div>
                 </div>
                 <div class="panel panel-primary">
