@@ -21,7 +21,7 @@
     <link rel="icon" type="image/png" href="/favicons/favicon-128.png" sizes="128x128" />
     <meta name="application-name" content="iwantolearn.io"/>
 
-    <link href="{{ asset('/css/front.css') }}" rel="stylesheet">
+    <link href="{{ elixir('css/front.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>

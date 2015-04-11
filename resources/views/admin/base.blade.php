@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Area</title>
 
-    <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
+    <link href="{{ elixir('css/admin.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>

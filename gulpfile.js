@@ -15,5 +15,8 @@ elixir(function(mix) {
     mix.sass([
         'admin/admin.scss',
         'front/front.scss'
+    ]).version([
+        'css/admin.css',
+        'css/front.css'
     ]);
 });
