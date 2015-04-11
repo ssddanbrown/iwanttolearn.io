@@ -73,7 +73,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading"><i class="fa fa-signal"></i> Site Statistics</div>
                     <div class="list-group">
-                        <div class="list-group-item">Total Tags: {{ $totals['tags'] }}</div>
+                        <div class="list-group-item">Total Topics: {{ $totals['tags'] }}</div>
                         <div class="list-group-item">Total Resources: {{ $totals['resources'] }}</div>
                     </div>
                 </div>

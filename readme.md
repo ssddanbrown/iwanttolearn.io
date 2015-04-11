@@ -5,7 +5,7 @@
 
 This repository hosts the source code that is used to run the site. Further details on how the site is built and hosts can be found [here on our about page](https://iwanttolearn.io/about).
 
-## Third Party Libraries Used
+## Third Party Libraries
 
 The site is built upon many brilliant open source projects which I have listed below:
 
