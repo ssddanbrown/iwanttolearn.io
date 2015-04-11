@@ -23,7 +23,7 @@
             <div class="col-md-9">
                 <div class="row group-container">
                     @foreach($resourceGroups as $resourceGroup)
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
                                     <i class="fa fa-{{ $resourceGroup['format']->icon }}"></i>

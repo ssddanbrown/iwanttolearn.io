@@ -440,12 +440,25 @@
 
   .navbar-toggle {
     border-color: $navbar-default-toggle-border-color;
-    &:hover,
-    &:focus {
+    &:hover {
       background-color: $navbar-default-toggle-hover-bg;
+      #nav-bar-1 {
+        width: 66%;
+        transform: translate3d(-7%, 12px, 0)  rotate(45deg) ;
+      }
+      #nav-bar-2 {
+        transform: rotate(90deg);
+        height: 2px;
+      }
+      #nav-bar-3 {
+        width: 66%;
+        transform: rotate(-45deg) translate3d(39%, 6px, 0) ;
+      }
     }
     .icon-bar {
+      transform: translate3d(0, 0, 0) rotate(0deg);
       background-color: $navbar-default-toggle-icon-bar-bg;
+      transition: all $anim-time 120ms;
     }
   }
 
