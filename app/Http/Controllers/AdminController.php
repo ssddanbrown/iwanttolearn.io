@@ -1,8 +1,7 @@
 <?php namespace Learn\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Auth\Guard as Auth;
 use Learn\Http\Requests;
-use Learn\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Learn\Models\Feedback;
@@ -10,13 +9,25 @@ use Learn\Models\Feedback;
 class AdminController extends Controller {
 
     /**
+     * @var Auth
+     */
+    protected $auth;
+
+    function __construct(Auth $auth)
+    {
+        $this->auth = $auth;
+    }
+
+
+    /**
      * Display a listing of the resource.
      *
      * @param Feedback $feedback
-     * @return Response
+     * @return \Illuminate\View\View
      */
 	public function index(Feedback $feedback)
 	{
+        /** @var int $feedbackCount */
         $feedbackCount = count($feedback->all());
 		return view('admin/index', ['feedbackCount' => $feedbackCount]);
 	}
@@ -40,7 +51,7 @@ class AdminController extends Controller {
         $email = $request->get('email');
         $password = $request->get('password');
 
-        if (Auth::attempt(array('email' => $email, 'password' => $password))) {
+        if ($this->auth->attempt(array('email' => $email, 'password' => $password))) {
             return redirect()->intended('/admin');
         }
 
@@ -54,7 +65,7 @@ class AdminController extends Controller {
      */
     public function logout()
     {
-        Auth::logout();
+        $this->auth->logout();
         return redirect('/');
     }
 

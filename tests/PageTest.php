@@ -2,22 +2,29 @@
 
 class PageTest extends TestCase {
 
-    protected $baseUrl = 'http://iwanttolearn.io';
-
     /** @test */
-    public function verify_that_pages_load_properly()
+    public function it_loads_pages_properly()
     {
         $this->visit('/');
         $this->visit('/about');
     }
 
     /** @test */
-    public function about_link_on_homepage_goes_to_about_page()
+    public function it_is_live_on_the_web()
+    {
+        $this->visit('https://iwanttolearn.io/catss')
+            ->seePageIs('https://iwanttolearn.io/catss');
+    }
+
+    /** @test */
+    public function it_redirects_to_the_about_page_when_about_is_clicked()
     {
         $this->visit('/')
-            ->click('about')
+            ->click('About')
             ->andSee('About')
             ->onPage('/about');
     }
+
+
 
 }
