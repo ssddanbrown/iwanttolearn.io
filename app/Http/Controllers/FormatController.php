@@ -1,9 +1,6 @@
 <?php namespace Learn\Http\Controllers;
 
 use Learn\Http\Requests;
-use Learn\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
 use Learn\Http\Requests\FormatRequest;
 use Learn\Models\Format;
 use Learn\Services\MessageService;
@@ -44,6 +41,7 @@ class FormatController extends Controller {
     /**
      * Store a newly created resource in storage.
      *
+     * @param FormatRequest $request
      * @return Response
      */
     public function adminStore(FormatRequest $request)
@@ -54,16 +52,6 @@ class FormatController extends Controller {
         return redirect('admin/formats');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -80,7 +68,8 @@ class FormatController extends Controller {
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param FormatRequest $request
+     * @param  int $id
      * @return Response
      */
     public function adminUpdate(FormatRequest $request, $id)

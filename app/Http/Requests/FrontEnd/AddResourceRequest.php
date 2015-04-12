@@ -21,12 +21,17 @@ class AddResourceRequest extends Request {
 	 */
 	public function rules()
 	{
-		return [
+        $rules = [
             'email' => 'required|email',
             'extra-link' => 'required|string|url',
-            'extra-message' => 'string',
-			'g-recaptcha-response' => 'required|captcha'
-		];
+            'extra-message' => 'string'
+        ];
+
+        if (env('APP_ENV') != 'testing') {
+            $rules['g-recaptcha-response'] = 'required|captcha';
+        }
+
+		return $rules;
 	}
 
 }
