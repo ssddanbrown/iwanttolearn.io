@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     // Admin pages
     Route::get('/', 'AdminController@index');
+    Route::get('/utils/clear-cache', 'AdminController@clearCache');
 
     // Admin Tag routes
     Route::group(['prefix' => 'tags'], function() {

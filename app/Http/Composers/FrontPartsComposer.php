@@ -20,7 +20,7 @@ class FrontPartsComposer extends NamedComposer {
 
     public function tagLinks(View $view)
     {
-        $tags = $this->tagRepo->getAll();
+        $tags = $this->tagRepo->getAllOrderByName();
         $view->with('tags', $tags);
     }
 

@@ -2,6 +2,7 @@
 
 use Learn\Repos\ResourceRepo;
 use Learn\Repos\TagRepo;
+use Learn\Services\MessageService;
 use Learn\Services\SitemapService;
 
 class PageController extends Controller {

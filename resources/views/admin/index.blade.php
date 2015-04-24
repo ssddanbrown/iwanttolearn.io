@@ -39,6 +39,13 @@
                     </div>
                 </div>
             </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">Admin Actions</div>
+                <div class="panel-body">
+                    <p>Here are some common utilities:</p>
+                    <a href="/admin/utils/clear-cache" class="btn btn-warning">Clear Cache</a>
+                </div>
+            </div>
         </div>
 
     </div>

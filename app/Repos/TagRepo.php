@@ -9,7 +9,8 @@ class TagRepo {
     protected $cache;
 
     protected $cacheTags = [
-        'all' => 'tag-all'
+        'all' => 'tag-all',
+        'allByName' => 'tag-all-by-name'
     ];
 
     function __construct(Tag $tag, Cache $cache)
@@ -25,6 +26,7 @@ class TagRepo {
     public function cleanCache($tag)
     {
         $this->cache->forget($this->cacheTags['all']);
+        $this->cache->forget($this->cacheTags['allByName']);
     }
 
     /**
@@ -43,13 +45,38 @@ class TagRepo {
      */
     public function getAll()
     {
-        $cacheTag = $this->cacheTags['all'];
+        return $this->allTags('all', 'created_at');
+    }
+
+    /**
+     * Gets all the tags available ordered by name.
+     *
+     * This method is cached for speed.
+     * @return mixed
+     */
+    public function getAllOrderByName()
+    {
+        return $this->allTags('allByName', 'name', 'asc');
+    }
+
+    /**
+     * Gets all tags available with a tag for caching
+     * and a specified column for sorting.
+     *
+     * @param string $cacheTagName
+     * @param string $orderColumn
+     * @param string $orderDirection
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    private function allTags($cacheTagName, $orderColumn, $orderDirection = 'asc')
+    {
+        $cacheTag = $this->cacheTags[$cacheTagName];
 
         if ($this->cache->has($cacheTag)) {
             return $this->cache->get($cacheTag);
         }
 
-        $tags = $this->tag->orderBy('created_at', 'desc')->get();
+        $tags = $this->tag->orderBy($orderColumn, $orderDirection)->get();
         $this->cache->forever($cacheTag, $tags);
         return $tags;
     }
