@@ -56,12 +56,12 @@
                             <i class="fa fa-tags"></i> Related Topics
                         </div>
                         <div class="list-group">
-                            @foreach($tag->tags as $tag)
-                                <a class="list-group-item" href="/t/{{ $tag->slug }}">
-                                    {{ $tag->name }} <i class="fa fa-tag pull-right"></i>
+                            @foreach($tag->tags as $relatedTag)
+                                <a class="list-group-item" href="/t/{{ $relatedTag->slug }}">
+                                    {{ $relatedTag->name }} <i class="fa fa-tag pull-right"></i>
                                     <br/>
                                     <span class="small">
-                                        {{ count($tag->resources) }} Resources Available
+                                        {{ count($relatedTag->resources) }} Resources Available
                                     </span>
                                 </a>
                             @endforeach
