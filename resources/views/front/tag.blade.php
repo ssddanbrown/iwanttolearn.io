@@ -27,7 +27,7 @@
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
                                     <i class="fa fa-{{ $resourceGroup['format']->icon }}"></i>
-                                    {{ $resourceGroup['format']->name }}
+                                    {{ $resourceGroup['format']->plural }}
                                 </div>
                                 <div class="list-group">
                                     @foreach($resourceGroup['resources'] as $resource)
