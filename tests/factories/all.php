@@ -13,3 +13,10 @@ $factory('Learn\Models\Format', [
     'icon' => 'book',
     'order' => 0
 ]);
+
+$factory('Learn\Models\Resource', [
+    'name' => $faker->name,
+    'link' => $faker->url,
+    'cost' => 'free',
+    'description' => $faker->text()
+]);

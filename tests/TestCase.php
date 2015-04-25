@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Laracasts\Integrated\Extensions\Laravel as IntegrationTest;
 use Laracasts\Integrated\Services\Laravel\DatabaseTransactions;
 
@@ -22,6 +23,18 @@ class TestCase extends IntegrationTest {
 
 		return $app;
 	}
+
+    /** @setUp */
+    public function laravelSetup()
+    {
+        Artisan::call('migrate');
+        Artisan::call('cache:clear');
+    }
+
+    protected function cacheClear()
+    {
+        Artisan::call('cache:clear');
+    }
 
     /**
      * Provides a wrapper for admin area tests.
