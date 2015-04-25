@@ -25,9 +25,7 @@
     <div class="hero-section white">
         <div class="container">
             <h2>Recently Added Resources</h2>
-            <div class="row">
-                @include('front/parts/recent-resources')
-            </div>
+            @include('front/parts/recent-resources')
         </div>
     </div>
 

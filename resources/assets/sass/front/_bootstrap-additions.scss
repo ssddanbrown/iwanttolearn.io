@@ -50,7 +50,7 @@
     text-decoration: none;
     box-shadow: $bs-tag-hover;
     transform: translate3d(0, -2px, 0);
-    i {
+    i.fa-tag {
       transform: rotate(-20deg);
     }
   }
@@ -75,7 +75,7 @@
   overflow: hidden;
   color: #888;
   transition: all $anim-time 80ms;
-  &:hover {
+  &:hover, &:hover > h4 {
     text-decoration: none;
     color: $brand-primary;
   }

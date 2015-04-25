@@ -24,8 +24,15 @@
     <div class="hero-section white">
         <div class="container">
             <h2>Recently Added Resources</h2>
-            <div class="row">
-                @include('front/parts/recent-resources')
+            @include('front/parts/recent-resources')
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="container">
+            <h2>Browse Resources By Formats</h2>
+            <div>
+                @include('front/parts/format-links')
             </div>
         </div>
     </div>

@@ -45,7 +45,7 @@ class FormatRepo {
      */
     public function getAll()
     {
-        return $this->allFormats('all', 'created_at');
+        return $this->allFormats('all', 'order');
     }
 
     /**
