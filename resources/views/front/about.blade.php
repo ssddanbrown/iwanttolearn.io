@@ -36,7 +36,7 @@
                             <li><a  target="_blank" href="http://danb.me"><i class="fa fa-home"></i> &nbsp;&nbsp;danb.me</a></li>
                             <li><a target="_blank" href="mailto:ssd.dan.brown@googlemail.com"><i class="fa fa-envelope"></i> &nbsp;&nbsp;ssddanbrown@googlemail.com</a></li>
                             <li><a href="https://github.com/ssddanbrown" target="_blank"><i class="fa fa-github"></i> &nbsp;&nbsp;Github</a></li>
-                            <li><a href="http://uk.linkedin.com/in/sandcat" target="_blank"><i class="fa fa-linkedin"></i>  &nbsp;&nbsp;LinkedIn</a></li>
+                            <li><a href="uk.linkedin.com/in/danjamesbrown" target="_blank"><i class="fa fa-linkedin"></i>  &nbsp;&nbsp;LinkedIn</a></li>
                             <li><a href="https://plus.google.com/102972469186357098848/about" target="_blank"><i class="fa fa-google-plus"></i> &nbsp;&nbsp;Google+</a></li>
                         </ul>
                     </div>
