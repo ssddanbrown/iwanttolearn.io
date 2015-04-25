@@ -42,7 +42,7 @@
     @endif
 
 </head>
-<body>
+<body class="@yield('body-class')">
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">

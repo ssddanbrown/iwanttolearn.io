@@ -1,6 +1,7 @@
 <?php namespace Learn\Services;
 
 use League\Flysystem\Exception;
+use Learn\Models\Format;
 use Learn\Models\Tag;
 
 class SitemapService {
@@ -71,6 +72,21 @@ class SitemapService {
         foreach ($tags as $tag) {
             $loc = $this->baseUrl . $tag->link();
             $lastMod = date('Y-m-d', strtotime($tag->updated_at));
+            $this->addUrl($loc, $lastMod, 'weekly', '0.8');
+        }
+    }
+
+    /**
+     * Adds an array of format pages into the sitemap.
+     *
+     * @param Format[] $formats
+     * @throws Exception
+     */
+    public function addFormats($formats)
+    {
+        foreach ($formats as $format) {
+            $loc = $this->baseUrl . $format->link();
+            $lastMod = date('Y-m-d', strtotime($format->updated_at));
             $this->addUrl($loc, $lastMod, 'weekly', '0.8');
         }
     }

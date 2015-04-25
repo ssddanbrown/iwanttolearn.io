@@ -4,6 +4,11 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('slug', 'Slug', ['class'=>'control-label']) !!}
+    {!! Form::text('slug', null, ['class'=>'form-control']) !!}
+</div>
+
+<div class="form-group">
     {!! Form::label('plural', 'Plural Name', ['class'=>'control-label']) !!}
     {!! Form::text('plural', null, ['class'=>'form-control']) !!}
 </div>
@@ -26,6 +31,8 @@
 </div>
 
 <script>
+
+    /** Icon and plural autofill */
     $(document).ready(function() {
         var icon = $('input[name="icon"]').first();
 
@@ -46,6 +53,17 @@
                 var value = $(this).val();
                 plural.val(value + 's');
             };
+        });
+    });
+
+    /** Slug autofill */
+    $(document).ready(function() {
+        var slug = $('input[name="slug"]').first();
+        $('input[name="name"]').change(function() {
+            if(slug.val() === '') {
+                var name = $(this).val();
+                slug.val(name.replace(/ /g, '-').toLowerCase())
+            }
         });
     });
 </script>

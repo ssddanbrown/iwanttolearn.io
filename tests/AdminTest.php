@@ -77,6 +77,7 @@ class AdminTest extends TestCase {
                 'name' => 'Test Format - abc123',
                 'plural' => 'Test Formats',
                 'order' => '0',
+                'slug' => 'test-format',
                 'icon' => 'book'
             ];
 

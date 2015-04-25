@@ -14,8 +14,11 @@
 // Front-end routes
 Route::get('/', 'PageController@homepage');
 Route::get('/about', 'PageController@about');
+
 Route::get('/submit', 'PageController@submit');
 Route::post('/submit/resource', 'FeedbackController@submitResource');
+
+Route::get('/f/{formatSlug}', 'PageController@format');
 Route::get('/t/{tagSlug}', 'PageController@tag');
 Route::get('/sitemap.xml', 'PageController@sitemap');
 

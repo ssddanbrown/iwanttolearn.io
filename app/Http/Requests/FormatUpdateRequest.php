@@ -2,7 +2,7 @@
 
 use Learn\Http\Requests\Request;
 
-class FormatRequest extends Request {
+class FormatUpdateRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -24,6 +24,7 @@ class FormatRequest extends Request {
 		return [
 			'name' => 'string|required|max:100',
             'icon' => 'string|required|max:100',
+            'slug' => 'required|string|max:100|unique:tags,slug,' . $this->route('id'),
             'plural' => 'string|required|max:100',
             'order' => 'required|integer'
 		];

@@ -23,15 +23,15 @@ class TagPageTest extends TestCase {
     /** @test */
     public function it_has_a_page_on_the_tag_slug()
     {
-        $link = $this->goToTagPage()->crawler->selectLink('Share on Facebook')->link()->getURI();
-        $this->assertContains(static::$attrs['slug'], $link);
+        $this->goToTagPage()
+            ->andSee(static::$attrs['name']);
     }
 
     /** @test */
     public function social_links_share_the_correct_page()
     {
-        $this->goToTagPage()
-            ->andSee(static::$attrs['name']);
+        $link = $this->goToTagPage()->crawler->selectLink('Share on Facebook')->link()->getURI();
+        $this->assertContains(static::$attrs['slug'], $link);
     }
 
 

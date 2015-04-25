@@ -1,7 +1,8 @@
 <?php namespace Learn\Http\Controllers;
 
 use Learn\Http\Requests;
-use Learn\Http\Requests\FormatRequest;
+use Learn\Http\Requests\FormatCreateRequest;
+use Learn\Http\Requests\FormatUpdateRequest;
 use Learn\Models\Format;
 use Learn\Services\MessageService;
 
@@ -41,10 +42,10 @@ class FormatController extends Controller {
     /**
      * Store a newly created resource in storage.
      *
-     * @param FormatRequest $request
+     * @param FormatCreateRequest $request
      * @return Response
      */
-    public function adminStore(FormatRequest $request)
+    public function adminStore(FormatCreateRequest $request)
     {
         $this->format = $this->format->fill($request->all());
         $this->format->save();
@@ -68,11 +69,11 @@ class FormatController extends Controller {
     /**
      * Update the specified resource in storage.
      *
-     * @param FormatRequest $request
+     * @param FormatUpdateRequest $request
      * @param  int $id
      * @return Response
      */
-    public function adminUpdate(FormatRequest $request, $id)
+    public function adminUpdate(FormatUpdateRequest $request, $id)
     {
         $this->format = $this->format->find($id);
         $this->format->fill($request->all());

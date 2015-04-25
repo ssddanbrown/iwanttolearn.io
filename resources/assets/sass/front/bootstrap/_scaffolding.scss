@@ -30,6 +30,9 @@ body {
   line-height: $line-height-base;
   color: $text-color;
   background-color: $body-bg;
+  &.white {
+    background-color: #FFFFFF;
+  }
 }
 
 // Reset fonts for relevant elements

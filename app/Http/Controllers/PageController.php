@@ -1,5 +1,6 @@
 <?php namespace Learn\Http\Controllers;
 
+use Learn\Repos\FormatRepo;
 use Learn\Repos\ResourceRepo;
 use Learn\Repos\TagRepo;
 use Learn\Services\MessageService;
@@ -9,6 +10,7 @@ class PageController extends Controller {
 
     protected $tagRepo;
     protected $resourceRepo;
+    protected $formatRepo;
 
     // A list of urls to static pages
     // Used for sitemap generation.
@@ -18,10 +20,11 @@ class PageController extends Controller {
         '/submit'
     ];
 
-    function __construct(TagRepo $tagRepo, ResourceRepo $resourceRepo)
+    function __construct(TagRepo $tagRepo, ResourceRepo $resourceRepo, FormatRepo $formatRepo)
     {
         $this->tagRepo = $tagRepo;
         $this->resourceRepo = $resourceRepo;
+        $this->formatRepo = $formatRepo;
     }
 
     /**
@@ -65,11 +68,31 @@ class PageController extends Controller {
     public function tag($tagSlug)
     {
         $tag = $this->tagRepo->getBySlug($tagSlug);
+
         if ($tag === null) {
             abort(404);
         }
+
         $resourceGroups = $this->resourceRepo->getByTagGroupedByFormat($tag);
         return view('front/tag', ['tag' => $tag, 'resourceGroups' => $resourceGroups]);
+    }
+
+
+    /**
+     * Shows the page for a specific format.
+     *
+     * @param $formatSlug
+     * @return \Illuminate\View\View
+     */
+    public function format($formatSlug)
+    {
+        $format = $this->formatRepo->getBySlug($formatSlug);
+
+        if ($format === null) {
+            abort(404);
+        }
+
+        return view('front/format', ['format' => $format]);
     }
 
     /**
@@ -80,8 +103,10 @@ class PageController extends Controller {
     public function sitemap(SitemapService $sitemapService)
     {
         $tags = $this->tagRepo->getAll();
+        $formats = $this->formatRepo->getAll();
         $sitemapService->addUrls($this->staticUrls);
         $sitemapService->addTags($tags);
+        $sitemapService->addFormats($formats);
         $sitemap = $sitemapService->generate();
         return response($sitemap, 200, ['Content-Type' => 'text/xml']);
     }

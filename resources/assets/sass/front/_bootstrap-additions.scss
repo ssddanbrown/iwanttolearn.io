@@ -79,15 +79,27 @@
     text-decoration: none;
     color: $brand-primary;
   }
-  &:hover h4 {
+  &a:hover h4 {
     color: $brand-primary;
   }
   h4 {
     color: #444;
     transition: all $anim-time 80ms;
   }
+  > a {
+    display: block;
+    color: #888;
+  }
+  .resource-item-tag-link:hover, >a:hover, >a:hover h4 {
+    text-decoration: none;
+    color: $brand-primary;
+  }
   .tags span {
     margin: 0 $-xxs;
+  }
+  .resource-item-tag-link {
+    color: #888;
+    margin-right: $-xxs;
   }
 }
 

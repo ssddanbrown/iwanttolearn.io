@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Format extends Model {
 
 	protected $table = 'formats';
-    protected $fillable = ['name', 'icon', 'plural', 'order'];
+    protected $fillable = ['name', 'icon', 'slug', 'plural', 'order'];
 
     public function getIconCode()
     {
@@ -21,6 +21,16 @@ class Format extends Model {
     public function articles()
     {
         return $this->morphedByMany('Learn\Models\Article', 'formattable');
+    }
+
+    /**
+     * Creates a site relative format for this tag.
+     *
+     * @return string
+     */
+    public function link()
+    {
+        return '/f/' . $this->slug;
     }
 
 }
