@@ -23,8 +23,20 @@
 
     <div class="hero-section white">
         <div class="container">
-            <h2>Recently Added Resources</h2>
-            @include('front/parts/recent-resources')
+            <div class="row">
+                <div class="col-md-4">
+                    <h3><i class="fa fa-code"></i>&nbsp;&nbsp;Learn To Code</h3>
+                    <p>This site lists resources for all types of coding and development topics covering various programming languages, frameworks and tools.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3><i class="fa fa-film"></i>&nbsp;&nbsp;Learn By Format</h3>
+                    <p>The resources are listed by format so you can find places that teach in the format most suited to you. Formats include videos, books and interactive tutorials.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3><i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;Discover New Topics</h3>
+                    <p>You can browse and discover new topics by listing all the resources that are in your favorite format, whether that's video, book, or article.</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -37,13 +49,17 @@
         </div>
     </div>
 
+    <div class="hero-section white">
+        <div class="container">
+            <h2>Recently Added Resources</h2>
+            @include('front/parts/recent-resources')
+        </div>
+    </div>
+
     <script src="/js/typed.min.js"></script>
     <script>
-        var tags = [
-                @foreach($tags as $tag)
-                    '{{ $tag->name }}',
-                @endforeach
-        ];
+        var tags = {!! json_encode($tags->lists('name')) !!};
+
         $(document).ready(function() {
             $('.hero-home').css({
                 maxHeight: $('.hero-home').outerHeight(),
