@@ -88,6 +88,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::group(['prefix' => 'feedback'], function() {
         Route::get('/', 'FeedbackController@adminIndex');
         Route::get('/{id}', 'FeedbackController@adminShow');
+        Route::patch('/{id}/archive', 'FeedbackController@toggleArchived');
         Route::delete('destroy/{id}', 'FeedbackController@adminDestroy');
     });
 

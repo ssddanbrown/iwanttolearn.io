@@ -9,6 +9,16 @@
     </div>
 
     <div class="col-md-12">
+        @if(Request::has('archived') && Request::get('archived') == 'true')
+            <a class="btn btn-default" href="/admin/feedback">View non-archived feedback</a>
+        @else
+            <a class="btn btn-default" href="/admin/feedback?archived=true">View archived feedback</a>
+        @endif
+        <br/>
+        <br/>
+    </div>
+
+    <div class="col-md-12">
 
 
         @if(count($feedbacks) > 0)

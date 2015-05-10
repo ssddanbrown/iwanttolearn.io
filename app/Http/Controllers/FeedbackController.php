@@ -1,5 +1,6 @@
 <?php namespace Learn\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Learn\Http\Requests\FrontEnd\AddResourceRequest;
 use Learn\Http\Requests;
 use Learn\Models\Feedback;
@@ -24,9 +25,10 @@ class FeedbackController extends Controller {
      *
      * @return Response
      */
-    public function adminIndex()
+    public function adminIndex(Request $request)
     {
-        $feedbacks = $this->feedback->orderBy('created_at', 'desc')->paginate(50);
+        $archived = $request->has('archived') && $request->get('archived') == 'true';
+        $feedbacks = $this->feedback->where('archived', '=', $archived)->orderBy('created_at', 'desc')->paginate(50);
         return view('admin/feedback/index', ['feedbacks' => $feedbacks]);
     }
 
@@ -53,6 +55,25 @@ class FeedbackController extends Controller {
         return redirect('/admin/feedback');
     }
 
+    /**
+     * Toggles the archived status of a feedback item.
+     *
+     * @param $id
+     */
+    public function toggleArchived($id)
+    {
+        $feedback = $this->feedback->find($id);
+        $feedback->archived = !$feedback->archived;
+        $feedback->save();
+        return redirect('/admin/feedback/' . $id);
+    }
+
+    /**
+     * Handles a resources submission request from the front end.
+     *
+     * @param AddResourceRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function submitResource(AddResourceRequest $request)
     {
         $this->feedback->email = $request->get('email');

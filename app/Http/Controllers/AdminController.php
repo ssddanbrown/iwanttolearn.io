@@ -24,7 +24,6 @@ class AdminController extends Controller {
         $this->message = $message;
     }
 
-
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +33,7 @@ class AdminController extends Controller {
 	public function index(Feedback $feedback)
 	{
         /** @var int $feedbackCount */
-        $feedbackCount = count($feedback->all());
+        $feedbackCount = $feedback->where('archived', '=', false)->count();
 		return view('admin/index', ['feedbackCount' => $feedbackCount]);
 	}
 

@@ -29,6 +29,16 @@
         </div>
 
         <div class="col-md-4">
+
+            <div class="panel panel-info">
+                <div class="panel-heading">@if($feedback->archived) Un-archive @else Archive @endif Feedback</div>
+                <div class="panel-body">
+                    {!! Form::open(['url' => '/admin/feedback/'.$feedback->id.'/archive','method' => 'patch']) !!}
+                        <button class="btn btn-info"><i class="fa fa-archive"></i> @if($feedback->archived) Un-archive @else Archive @endif</button>
+                    {!! Form::close() !!}
+                </div>
+            </div>
+
             {!! Form::model($feedback, ['url' => '/admin/feedback/destroy/' . $feedback->id, 'method' => 'delete']) !!}
             <div class="panel panel-danger">
                 <div class="panel-heading">Delete Resource</div>
