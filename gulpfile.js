@@ -1,5 +1,5 @@
 var elixir = require('laravel-elixir');
-
+require('laravel-elixir-livereload');
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -18,5 +18,5 @@ elixir(function(mix) {
     ]).version([
         'css/admin.css',
         'css/front.css'
-    ]);
+    ]).livereload();
 });

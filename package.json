@@ -3,6 +3,7 @@
   "devDependencies": {
     "gulp": "^3.8.8",
     "gulp-phpunit": "^0.8.1",
-    "laravel-elixir": "*"
+    "laravel-elixir": "^0.18.7",
+    "laravel-elixir-livereload": "0.0.3"
   }
 }

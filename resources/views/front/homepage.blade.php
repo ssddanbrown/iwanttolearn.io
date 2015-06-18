@@ -6,15 +6,9 @@
 
 @section('content')
 
-    <div class="hero-home hero-section blue">
+    <div class="hero-home hero-section dark">
         <div class="container">
-            <h1>Find new places to learn <br/><span class="typedjs">&nbsp;</span></h1>
-        </div>
-    </div>
-
-    <div class="hero-section">
-        <div class="container">
-            <h2>Available Topics</h2>
+            <h1>I want to learn...</h1>
             <div>
                 @include('front/parts/tag-links')
             </div>
@@ -56,20 +50,4 @@
         </div>
     </div>
 
-    <script src="/js/typed.min.js"></script>
-    <script>
-        var tags = {!! json_encode($tags->lists('name')) !!};
-
-        $(document).ready(function() {
-            $('.hero-home').css({
-                maxHeight: $('.hero-home').outerHeight(),
-                minHeight: $('.hero-home').outerHeight()
-            });
-            $('.typedjs').typed({
-                strings: tags,
-                contentType: 'html',
-                typeSpeed: 100
-            });
-        });
-    </script>
 @stop
