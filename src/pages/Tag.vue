@@ -20,7 +20,7 @@
                                   {{ format.plural }}
                               </div>
                               <div class="list-group">
-                                  <a v-for="resource in format.resources" class="list-group-item" target="_blank" :href="resource.link">
+                                  <a v-for="resource in format.resources" class="list-group-item" target="_blank" rel="noopener" :href="resource.link">
                                       {{ resource.name }}
                                       <!-- TODO - Add tooltip -->
                                       <div v-if="resource.cost !== 'free'" class="pull-right tooltip">

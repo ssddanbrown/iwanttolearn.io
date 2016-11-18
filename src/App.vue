@@ -10,7 +10,7 @@
 					<div class="col-xs-6 nav">
 						<router-link to="/about">About</router-link>
 						&nbsp;&nbsp;&nbsp;&nbsp;
-						<a target="_blank" href="https://github.com/ssddanbrown/iwanttolearn.io">Github</a>
+						<a rel="noopener" target="_blank" href="https://github.com/ssddanbrown/iwanttolearn.io">Github</a>
 					</div>
 				</div>
 		    </div>
