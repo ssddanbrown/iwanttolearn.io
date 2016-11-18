@@ -46,22 +46,19 @@
 	                    <p>This site is built upon many brilliant open source projects. Here is an overview of what this site runs on:</p>
 	                    <ul>
 	                        <li>Host: <a href="https://www.digitalocean.com/?refcode=3e6ce576b856" target="_blank">Digital Ocean</a></li>
-	                        <li>OS: <a href="http://www.ubuntu.com/" target="_blank">Ubuntu 14.04</a></li>
-	                        <li>Server Stack: <a target="_blank" href="http://nginx.org/">NGINX</a> +
-	                            <a target="_blank" href="http://redis.io/">Redis</a></li>
-	                        <li>Framework: <a href="http://laravel.com/" target="_blank">Laravel</a></li>
+	                        <li>OS: <a href="http://www.ubuntu.com/" target="_blank">Ubuntu 16.04</a></li>
+	                        <li>Server Stack: <a target="_blank" href="http://nginx.org/">NGINX</a>
+	                        <li>Framework: <a href="https://vuejs.org/" target="_blank">VueJS</a></li>
 	                        <li>Styling: <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> & <a href="http://sass-lang.com/" target="_blank">Sass</a></li>
 	                        <li>Icons: <a href="http://fontawesome.io/" target="_blank">Font-awesome icon font</a></li>
 	                        <li>
 	                            JS Libraries:
-	                            <a target="_blank" href="https://jquery.com/">Jquery</a>,
-	                            <a target="_blank" href="http://www.mattboldt.com/demos/typed-js/">Typed.js</a> &
 	                            <a target="_blank" href="http://masonry.desandro.com/">masonry.js</a>
 	                        </li>
 	                    </ul>
 	                    <br/>
 	                    <p>The source to this site is also open under the MIT licence, the source can be found here: </p>
-	                    <a class="btn btn-default" target="_blank" href="https://github.com/ssddanbrown/iwanttolearn.io"><i class="fa fa-github"></i> View On Github</a>
+	                    <a class="btn btn-default" target="_blank" href="https://github.com/ssddanbrown/iwanttolearn.io"><i class="fa fa-lg fa-github"></i> View On Github</a>
 	                    <br/>
 	                </div>
 	            </div>

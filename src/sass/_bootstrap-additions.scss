@@ -1,12 +1,20 @@
 
+nav {
+  background-color: #333;
+  a {
+    padding: $-xs 0;
+    display: inline-block;
+  }
+  .nav {
+    text-align: right;
+  }
+}
+
 .hero-home h1 {
   font-size: 6em;
   font-weight: 200;
   @include smaller-than(600px) {
     font-size: 3em;
-  }
-  a {
-    color: #FFF;
   }
 }
 
@@ -50,6 +58,16 @@ $orange: #ffc33f;
   &.dark {
     background-color: #333;
     color: #f8f8f8;
+    h1, h2 {
+      color: #f8f8f8;
+    }
+  }
+  &.grey {
+    background-color: #555;
+    color: #f8f8f8;
+    h1, h2 {
+      color: #f8f8f8;
+    }
   }
   &.blue {
     background-color: $brand-primary;
@@ -69,6 +87,13 @@ $orange: #ffc33f;
   }
   @include smaller-than(600px) {
     padding: 50px 0 50px 0;
+  }
+}
+
+nav + .home .hero-section {
+  padding-top: 66px;
+  @include smaller-than(600px) {
+    padding: 25px 0 25px 0;
   }
 }
 
@@ -158,8 +183,8 @@ body {
 }
 .footer {
   position: absolute;
-  background-color: #FFF;
-  border-top: 1px solid #DDD;
+  background-color: #333;
+  border-top: 1px solid #444;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -203,5 +228,44 @@ label.required:after, span.required:after {
     i.fa {
       left: 46%;
     }
+  }
+}
+
+.tooltip {
+  position: relative;
+  > span {
+    display: block;
+    position: absolute;
+    width:140px;
+    color: #FFFFFF;
+    background: #222222;
+    line-height: 16px;
+    font-size: 12px;
+    padding: 4px;
+    text-align: center;
+    border-radius: 6px;
+    margin-left: -70px;
+    left: 50%;
+    top: 140%;
+    z-index: 99;
+    pointer-events: none;
+    transform: scale3d(0, 0, 0);
+    transition: all ease-in-out 120ms;
+  }
+  i:hover+span {
+    display: block;
+    transform: scale3d(1, 1, 1);
+  }
+  > span:after {
+      content: '';
+    position: absolute;
+    top: -8px;
+    display: block;
+    left: 50%;
+    margin-left: -8px;
+    width: 0; height: 0;
+    border-bottom: 8px solid #222222;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
   }
 }

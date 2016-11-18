@@ -69,13 +69,19 @@ resources.forEach(resource => {
     });
 });
 tagsCopy.forEach(tag => {
+    // Add Tag resources
     tag.resources = resources.filter(resource => {
         return resource.tags.indexOf(tag.slug) !== -1;
     });
+});
+tagsCopy.forEach(tag => {
+    // Add Related tags
     tag.related = tag.related.map(related => {
         let search = tags.filter(t => { return t.slug === related});
         if (search.length === 0) throw new Error(`Tag '${related}' not found in tags list. Occured on relations of '${tag}' tag.`);
-        return search[0];
+        let result = search[0];
+        result.resourceCount = tagsCopy.filter(tc => {return tc.slug === related})[0].resources.length;
+        return result;
     });
     fs.writeFileSync(`${outDir}/tags/${tag.slug}.json`, JSON.stringify(tag, null, 2));
 });

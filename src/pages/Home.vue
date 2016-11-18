@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <div class="hero-section hero-home">
+    <div class="hero-section hero-home grey">
         <div class="container">
             <h2>Browse Resources By Formats</h2>
             <div>

@@ -38,10 +38,6 @@ module.exports = {
         loader: 'vue'
       },
       {
-        test: /\.scss$/,
-        loader: 'sass'
-      },
-      {
         test: /\.js$/,
         loader: 'babel',
         include: projectRoot,

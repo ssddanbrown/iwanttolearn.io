@@ -23,7 +23,12 @@
                                   <a v-for="resource in format.resources" class="list-group-item" target="_blank" :href="resource.link">
                                       {{ resource.name }}
                                       <!-- TODO - Add tooltip -->
-                                      <i v-if="resource.cost !== 'free'" class="fa fa-money pull-right"></i>
+                                      <div v-if="resource.cost !== 'free'" class="pull-right tooltip">
+                                          <i class="fa fa-money"></i>
+                                          <span v-if="resource.cost === 'paid'">This resource costs to use</span>
+                                          <span v-if="resource.cost === 'free+paid'">Free and paid options available</span>
+                                      </div>
+                                      
                                       <br/>
                                       <span class="small">
                                           {{ resource.shortLink }}
