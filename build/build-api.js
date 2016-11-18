@@ -31,6 +31,7 @@ tags.forEach(tag => {
     });
 });
 
+checkDirExists(outDir);
 // Render out tags and formats
 fs.writeFileSync(`${outDir}/tags.json`, JSON.stringify(tags, null, 2));
 fs.writeFileSync(`${outDir}/formats.json`, JSON.stringify(formats, null, 2));

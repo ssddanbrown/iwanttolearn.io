@@ -6,6 +6,12 @@ import App from './App'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
+// ServiceWorker Setup
+import runtime from 'serviceworker-webpack-plugin/lib/runtime';
+if ('serviceWorker' in navigator) {
+  const registration = runtime.register();
+}
+
 
 // Pages
 import Home from './pages/Home'

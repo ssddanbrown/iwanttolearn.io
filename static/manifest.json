@@ -1,0 +1,25 @@
+{
+  "short_name": "iwanttolearn.io",
+  "name": "iwanttolearn.io Programming Resource Site",
+  "icons": [
+    {
+      "src": "/static/icons/icon-48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/static/icons/icon-96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/static/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#333333",
+  "theme_color": "#409e9e",
+  "display": "browser"
+}
