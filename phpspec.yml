@@ -1,5 +1,0 @@
-suites:
-    main:
-        namespace: Learn
-        psr4_prefix: Learn
-        src_path: app

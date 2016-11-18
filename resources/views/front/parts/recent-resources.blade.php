@@ -1,1 +1,0 @@
-@include('front/parts/resource-links')

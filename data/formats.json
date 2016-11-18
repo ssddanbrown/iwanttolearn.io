@@ -1,0 +1,47 @@
+[
+    {
+        "name":"Article",
+        "plural":"Articles",
+        "icon":"file-text"
+    },
+    {
+        "name":"Book",
+        "plural":"Books",
+        "icon":"book"
+    },
+    {
+        "name":"Community",
+        "plural":"Communities",
+        "icon":"group"
+    },
+    {
+        "name":"Information",
+        "plural":"Information",
+        "icon":"info-circle"
+    },
+    {
+        "name":"Interactive",
+        "plural":"Interactive Sites",
+        "icon":"keyboard-o"
+    },
+    {
+        "name":"News",
+        "plural":"News",
+        "icon":"newspaper-o"
+    },
+    {
+        "name":"Reference",
+        "plural":"Reference Sites",
+        "icon":"tasks"
+    },
+    {
+        "name":"Text Based Guide",
+        "plural":"Text Based Guides",
+        "icon":"font"
+    },
+    {
+        "name":"Video",
+        "plural":"Videos",
+        "icon":"film"
+    }
+]
