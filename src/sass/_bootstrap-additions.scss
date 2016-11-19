@@ -180,6 +180,9 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 40px;
+  @include smaller-than(500px) {
+    margin-bottom: 0;
+  }
 }
 .footer {
   position: absolute;
@@ -190,6 +193,10 @@ body {
   /* Set the fixed height of the footer here */
   height: 42px;
   padding: $-s 0;
+  @include smaller-than(500px) {
+    height: auto;
+    position: relative;
+  }
 }
 
 // Form page stuff
@@ -268,4 +275,65 @@ label.required:after, span.required:after {
     border-right: 8px solid transparent;
     border-left: 8px solid transparent;
   }
+}
+
+
+.list-glide-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-glide-enter-active, .list-glide-leave-active {
+  transition: all 0.5s;
+}
+.list-glide-enter, .list-glide-leave-active {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide-fade-enter-active {
+  transition: all .2s ease;
+}
+.slide-fade-leave-active {
+  transition: all .6s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-active {
+  padding-left: 10px;
+  opacity: 0;
+}
+
+.masonry > div {
+  column-count: 3;
+  column-gap: 1em;
+  .masonry-item { /* Masonry bricks or child elements */
+      display: inline-block;
+      width: 100%;
+      -webkit-column-break-inside: avoid; /* Chrome, Safari */
+      page-break-inside: avoid;           /* Theoretically FF 20+ */
+      break-inside: avoid-column; 
+  }
+  @include smaller-than(992px) {
+    column-count: 2;
+  }
+  @include smaller-than(500px) {
+    column-count: 1;
+  }
+}
+
+
+.list-group {
+  position: relative;
+  overflow: hidden;
+}
+.list-complete-item {
+  transition: transform 0.5s, opacity 0.5s;
+  display: block;
+}
+.list-complete-enter, .list-complete-leave-active {
+  opacity: 0;
+  transform: translateX(130px);
+}
+.list-complete-leave-active {
+  position: absolute;
+  left: 0;
+  right: 0;
 }

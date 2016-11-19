@@ -51,10 +51,6 @@
 	                        <li>Framework: <a href="https://vuejs.org/" target="_blank" rel="noopener">VueJS</a></li>
 	                        <li>Styling: <a href="http://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap</a> & <a href="http://sass-lang.com/" target="_blank" rel="noopener">Sass</a></li>
 	                        <li>Icons: <a href="http://fontawesome.io/" target="_blank" rel="noopener">Font-awesome icon font</a></li>
-	                        <li>
-	                            JS Libraries:
-	                            <a target="_blank" rel="noopener" href="http://masonry.desandro.com/">masonry.js</a>
-	                        </li>
 	                    </ul>
 	                    <br/>
 	                    <p>The source to this site is also open under the MIT licence, the source can be found here: </p>

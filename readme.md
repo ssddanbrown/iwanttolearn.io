@@ -43,7 +43,6 @@ The site is built upon many brilliant open source projects which I have listed b
 *   Framework: [VueJS](https://vuejs.org/)
 *   Styling: [Bootstrap](http://getbootstrap.com/) & [Sass](http://sass-lang.com/)
 *   Icons: [Font-awesome icon font](http://fontawesome.io/)
-*   JS Libraries: [masonry.js](http://masonry.desandro.com/)
 
 ## Contributing
 

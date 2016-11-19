@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "axios": "^0.15.2",
-    "masonry-layout": "^4.1.1",
     "node-sass": "^3.13.0",
     "sass-loader": "^4.0.2",
     "serviceworker-webpack-plugin": "^0.1.7",
